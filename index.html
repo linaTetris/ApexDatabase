@@ -1,0 +1,146 @@
+<html>
+    <head>
+        <title>Apex Database</title>
+
+        <!-- dependencies -->
+        <script type="text/javascript" src="prototypes.js"></script>
+        <script type="text/javascript" src="classes.js"></script>
+
+        <!-- plugins -->
+        <script type="text/javascript" src="lib/toast.js"></script>
+        <link rel="stylesheet" href="lib/notification-style.css">
+
+        <!-- scripts which depend on plugins -->
+        <script type="text/javascript" src="plugins/notification.js"></script>
+
+        <!-- main scripts -->
+        <script type="text/javascript" src="apex-data.js"></script>
+        <script type="text/javascript" src="data.js"></script>
+        <script type="text/javascript" src="init.js"></script>
+
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body onload="init()">
+        <div class="tab" style="margin:0px;">
+            <!-- <div>
+                <button class="tablinks" id="defaultTab" onclick="openTab(event, 'frigate')">Frigates</button>
+                <span id="frigateNotif" class="notif">!</span>
+            </div>
+            <div>
+                <button class="tablinks" onclick="openTab(event, 'destroyer')">Destroyers</button>
+                <span id="destroyerNotif" class="notif">!</span>
+            </div>
+            <div>
+                <button class="tablinks" onclick="openTab(event, 'cruiser')">Cruisers</button>
+                <span id="cruiserNotif" class="notif">!</span>
+            </div>
+            <div>
+                <button class="tablinks" onclick="openTab(event, 'battlecruiser')">Battlecruisers</button>
+                <span id="battlecruiserNotif" class="notif">!</span>
+            </div>
+            <div>
+                <button class="tablinks" onclick="openTab(event, 'carrier')">Carriers</button>
+                <span id="carrierNotif" class="notif">!</span>
+            </div>
+            <div>
+                <button class="tablinks" onclick="openTab(event, 'fighter')">Fighters</button>
+                <span id="fighterNotif" class="notif">!</span>
+            </div>
+            <div>
+                <button class="tablinks" onclick="openTab(event, 'corvette')">Corvettes</button>
+                <span id="corvetteNotif" class="notif">!</span>
+            </div>
+            <div>
+                <button class="tablinks" onclick="openTab(event, 'battleship')">Battleships</button>
+                <span id="battleshipNotif" class="notif">!</span>
+            </div>
+            <div>
+                <button class="tablinks" onclick="openTab(event, 'miner')">Utility Ships</button>
+                <span id="minerNotif" class="notif">!</span>
+            /div> -->
+            <table style="width: 100%; padding: 0px 50px; align-content: center">
+                <tbody>
+                    <tr>
+                        <td style="width:10%"></td>
+                        <td style="width:80%">
+                            <div style="text-align: center; float: none; ">
+                                <p style="font-size: 20px; font-weight: 700; margin:0px;">Apex Database</p>
+                            </div>
+                        </td>
+                        <td style="width:10%; text-align: right;">v1.0.0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="contents">
+            <div id="sidebar">
+                <h2 style="text-align: center; margin-bottom: 5px;">Ship selection</h2>
+                
+                <!-- tab content -->
+                <div class="shiptab-wrapper">
+                    <button class="collapsible shiptab">Fighter</button>
+                    <div id="fighter" class="collapsible-content shiptab"></div>
+                </div>
+
+                <div class="shiptab-wrapper">
+                    <button class="collapsible shiptab">Corvette</button>
+                    <div id="corvette" class="collapsible-content shiptab"></div>
+                </div>
+
+                <div class="shiptab-wrapper">
+                    <button class="collapsible shiptab">Frigate</button>
+                    <div id="frigate" class="collapsible-content shiptab"></div>
+                </div>
+
+                <div class="shiptab-wrapper">
+                <button class="collapsible shiptab">Destroyer</button>
+                <div id="destroyer" class="collapsible-content shiptab"></div>
+                </div>
+
+                <div class="shiptab-wrapper">
+                    <button class="collapsible shiptab">Cruiser</button>
+                    <div id="cruiser" class="collapsible-content shiptab"></div>
+                </div>
+
+                <div class="shiptab-wrapper">
+                    <button class="collapsible shiptab">Battlecruiser</button>
+                    <div id="battlecruiser" class="collapsible-content shiptab"></div>
+                </div>
+
+                <div class="shiptab-wrapper">
+                    <button class="collapsible shiptab">Carrier</button>
+                    <div id="carrier" class="collapsible-content shiptab"></div>
+                </div>
+
+                <div class="shiptab-wrapper">
+                    <button class="collapsible shiptab">Auxiliary Ship</button>
+                    <div id="auxiliary" class="collapsible-content shiptab"></div>
+                </div>
+
+                <div class="shiptab-wrapper">
+                    <button class="collapsible shiptab">Battleship</button>
+                    <div id="battleship" class="collapsible-content shiptab"></div>
+                </div>
+
+                <!-- <div class="shiptab-wrapper">
+                    <button class="collapsible shiptab">Utility ship</button>
+                    <div id="miner" class="collapsible-content shiptab"></div>
+                </div> -->
+            </div>
+
+            <div id="apex-content-wrapper">
+                <div id="apex-content">
+                    <table style="width: 100%; border: none;">
+                        <tbody>
+                            <tr style="height: 120px">
+                                <td style="width:80%; font-size: 80px; margin:0px; font-weight:700;" id="ship_display_name"></td>
+                                <td style="text-align: right; align-content: right;"><img height="120" id="ship_pfp" src="assets/ships/fg300_a.png"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

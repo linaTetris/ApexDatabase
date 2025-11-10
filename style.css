@@ -1,0 +1,376 @@
+body {
+    background-image: linear-gradient(24deg, #250080 0%, #000000 60%);
+    background-attachment: fixed;
+    font-family: 'Segoe UI';
+    color: #ffffff;
+    margin:0px;
+    overflow: hidden;
+}
+
+button {
+    font-family: 'Segoe UI';
+    color: #ffffff;
+    background-color: #a00080;
+}
+
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    background-color: #400080;
+    position: absolute;
+    z-index: 9999999;
+    width:100%;
+    height: 50px;
+    vertical-align: center;
+    text-align: center;
+    align-content: center;
+}
+
+.contents {
+    margin:0px; 
+    margin-top: 50px;
+    padding:0px; 
+    float:left; 
+    width:100%;
+}
+  
+/* Style the buttons that are used to open the tab content */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.25s;
+}
+
+.tab div span.notif {
+    position: absolute;
+    transform: translate(-20px,0px);
+    padding: 3px 11px;
+    border-radius: 100%;
+    background: #f00044;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 16px;
+    display:inline-block;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #700080;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #900090;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border-top: none;
+}
+
+.ship {
+    width: 100%;
+    height: 40px;
+    margin: 5px 0px;
+    text-align: center;
+    align-content: center;
+    border-radius: 10px;
+
+    transition: 0.25s;
+}
+
+.ship:not(.ship-active) {
+    background-color: #5f206c;
+    border-color: #5f206c;
+}
+
+.ship:hover {
+    background-color: #9a18b4;
+    border-color: #9a18b4;
+}
+
+.ship.ship-active {
+    background-color: #a500c6;
+    border-color: #a500c6;
+}
+
+#sidebar {
+    float: left;
+    position: fixed;
+    margin: 0px;
+    width: 300px;
+    height: calc(100% - 50px);
+    overflow-y: auto;
+    background-color: #000020a0;
+    align-items: center;
+}
+
+
+#apex-content-wrapper {
+    float: left;
+    left: 300px;
+    position: fixed;
+    margin: 0px;
+    width: calc(100% - 300px);
+    height: calc(100% - 50px);
+    overflow-y: scroll;
+    /* background-color: #00000080; */
+}
+
+#apex-content {
+    position: relative;
+    padding: 10px 10px;
+}
+
+.collapsible {
+    background-color: #777;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    height: 56px;
+    align-content: center;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+.collapsible.shiptab {
+    
+    background-color: #506;
+    color: white;
+    cursor: pointer;
+    padding: 12px;
+    padding-left: 2em;
+    width: 100%;
+    height: 48px;
+    align-content: center;
+    
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    font-weight: 600;
+
+    display: flex;
+    margin: 5px auto;
+    margin-bottom: 0px;
+
+    border-radius: 24px;
+    border-color: #506;
+}
+
+.collapsible.shiptab:hover, .collapsible.shiptab.collapsible-active:hover {
+    background-color: #909;
+}
+
+.collapsible.shiptab.collapsible-active {
+    background-color: #707;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;   
+}
+
+.collapsible-content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #404040;
+}
+
+
+.collapsible-content.shiptab {
+    background-color: #fff0;
+    width: 90%;
+    padding: 0px;
+    display: flexbox;
+    margin: 0px auto;
+    align-content: center;
+}
+
+.shiptab-wrapper {
+    width: 85%;
+    display: flexbox;
+    margin: auto;
+    background-color: #707;
+    border-radius: 24px;
+    transition: 0.2s ease-out;
+}
+
+.shiptab-wrapper:has(.collapsible.shiptab.collapsible-active) {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+
+.apex-level-container {
+    width: 100%;
+    margin: 10px 0px;
+}
+
+.collapsible.apex-cl {
+    background-color: #4800ff50;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    height: 56px;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+
+    transition: 0s;
+}
+
+.collapsible.apex-cl:hover {
+    background-color: #3600bfa0;
+}
+
+.collapsible.apex-cl.collapsible-active {
+    background-color: #3600bfa0;
+}
+
+.collapsible.apex-cl:not(:hover) {
+    transition: 1s;
+}
+
+
+.collapsible-content.apex-cl {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #170052;
+}
+
+
+.contributor {
+    width: 85%;
+    margin: auto;
+    text-align: center;
+    font-size: 16px;
+    padding: 8px;
+    background-color: #400080;
+    border-color: #400080;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+
+.apex-upgrades {
+    width: 95%;
+    margin: 10px;
+    border: none;
+    background-color: #409;
+    padding-bottom: 5px;
+}
+
+
+.apex-upgrade-wrapper {
+    width: 90%;
+    display: flexbox;
+    margin: auto;
+    background-color: #ee7000;
+    border-radius: 24px;
+    transition: 0.2s ease-out;
+}
+
+.apex-table-row {
+    /* width: 100%; */
+    vertical-align: top;
+    padding: 5px 0px;
+}
+
+th.apex-table-row {
+    /* width: 100%; */
+    vertical-align: top;
+    padding: 5px 0px;
+    padding-top: 10px;
+}
+
+/* .apex-upgrade-wrapper:has(.collapsible.apex-upgrade.collapsible-active) {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+} */
+
+.collapsible.apex-upgrade {
+    
+    background-color: #ee7000;
+    color: white;
+    cursor: pointer;
+    padding: 12px;
+    padding-left: 1em;
+    width: 100%;
+    height: 48px;
+    align-content: center;
+    
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    font-weight: 600;
+
+    display: flex;
+    margin: 5px auto;
+    margin-bottom: 0px;
+
+    border-radius: 24px;
+    border-color: #dd6000;
+}
+
+.collapsible.apex-upgrade:hover, .collapsible.apex-upgrade.collapsible-active:hover {
+    background-color: #ff8000;
+}
+
+.collapsible.apex-upgrade.collapsible-active {
+    background-color: #ee7000;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;   
+}
+
+.collapsible-content.apex-upgrade {
+    background-color: #cc5000;
+    padding: 0px 20px;
+    border-color: #dd6000;
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
+}
+
+.apex-table-row.header {
+    /* width: 100%; */
+    vertical-align: top;
+    padding: 5px 0px;
+
+    font-size: 24px;
+    background-color: #240050;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 16px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #0000;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #661166;
+  border-radius: 10px;
+  border-color: #661166;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #aa11aa;
+  border-color: #aa11aa;
+}

@@ -1,0 +1,32 @@
+.siiimpleToast {
+    position: absolute;
+    padding: 14px 18px;
+    min-width: 15%;
+    z-index: 999999;
+    border-radius: 2px;
+    color: #fff;
+    font-weight: 400; /* formerly 600 but set to 400 aka normal */
+    white-space: nowrap;
+    user-select: none;
+    opacity: 0;
+    box-shadow: 0 3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.23);
+    box-sizing: border-box;
+    transform: scale(.5);
+    transition: all .4s ease-out
+}
+
+.siiimpleToast[data-state=default] {
+    background-color: #0000cc
+}
+
+.siiimpleToast[data-state=success] {
+    background-color: #40a50e
+}
+
+.siiimpleToast[data-state=alert] {
+    background-color: #ef4b0c
+}
+
+.siiimpleToast[data-state=warn] {
+    background-color: #ffd000
+}
