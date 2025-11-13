@@ -240,14 +240,14 @@ var ships = [
         [new Module("D1", "Short-Range Anti-Aircraft System"), new Module("D2", "Targeted Protection System"), new Module("D3", "Damage Control System")]
     ]),
 
-    new SuperCap("Antontas Swordbearer", "battlecruiser", "antonios", [ // problem! NO IDEA WHAT THE MODS ARE!!
+    new SuperCap("Antontas Swordbearer", "battlecruiser", "antonios", [
         new ShipVariant(0, "Ultra Type", "Command Ship"),
     ], apex_swordbearer, 
         [[new Module("M1", "\"Swarm\" UAV Combat Center"), new Module("M2", "\"Joint\" UAV Combat Center"), new Module("M3", "\"Sync\" UAV Combat Center"),],
-        [new Module("A1", "\"Razor\" Command System"), new Module("A2", "\"????\" Command System"), new Module("A3", "\"???\" Command System"),],
-        [new Module("B1", "Corvette Loading System"), new Module("B2", "???  System"), new Module("B2", "??? System")],
-        [new Module("C1", "????? System"), new Module("C2", "?????? Module"), new Module("C3", "???? System")],
-        [new Module("D1", "?????? System"), new Module("D2", "????? System"), new Module("D3", "????? System")]
+        [new Module("A1", "\"Razor\" Command System"), new Module("A2", "\"Stiletto\" Command System"), new Module("A3", "\"Broadsword\" Command System"),],
+        [new Module("B1", "Corvette Loading System"), new Module("B2", "Missile Launching System"), new Module("B2", "Pulse Cannon System")],
+        [new Module("C1", "Reinforced Armor System"), new Module("C2", "Electromagnetic Energy Armor"), new Module("C3", "Additional Armor System")],
+        [new Module("D1", "Anti-Aircraft Missile System"), new Module("D2", "\"Minecart\" Projectile Launching Array"), new Module("D3", "Missile Launching System")]
     ]),
 
     new SuperCap("Thunderbolt Star", "battlecruiser", "thunderbolt", [
