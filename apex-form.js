@@ -373,6 +373,8 @@ function generateApexCode() {
 
     clampApexInput(false);
 
+    var apex_level = Number(document.getElementById("apex-level-selector").value);
+
     // basic stats
     code += document.getElementById("apex-level-selector").value + ", ";
     code += document.getElementById("hp-bonus-input").value + ", ";
@@ -506,7 +508,10 @@ function generateApexCode() {
     code += ")"
     console.log(code);
 
-    document.getElementById("generated-code").innerHTML = code;
+    // document.getElementById("generated-code").innerHTML = code;
+
+    // temporary line before git integration is here
+    document.getElementById("generated-code").innerHTML = `${ship.apexReferenceVariable}[${apex_level}] = ${code}`;
 
     document.getElementById("generated-code").style.display = "inline-block";
 
