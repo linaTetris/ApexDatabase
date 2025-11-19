@@ -1,20 +1,58 @@
-var coll;
+var coll_all;
 var apex_coll;
 
+var coll_indicator;
+
+function toggleCollapsible(event) {
+    var element = event.currentTarget;
+    element.classList.toggle("collapsible-active");
+    var content = element.nextElementSibling;
+    if (content.style.maxHeight){
+    content.style.maxHeight = null;
+    } else {
+    content.style.maxHeight = content.scrollHeight + "px";
+    } 
+    reloadApexCollapsibleHeights();
+}
+
+function toggleApexCollapsible(event) {
+    var element = event.currentTarget;
+    element.classList.toggle("collapsible-active");
+    var content = element.nextElementSibling;
+    if (content.style.maxHeight){
+    content.style.maxHeight = null;
+    } else {
+    content.style.maxHeight = content.scrollHeight + "px";
+    }
+    reloadApexCollapsibleHeights();
+}
+
+function toggleCollapsibleIndicator(event) {
+    var element = event.currentTarget;
+    var indicator = element.querySelector('.collapsible-indicator-arrow');
+    if (element.classList.contains("collapsible-active")) {
+        indicator.innerHTML = "&#x25BC";
+    }
+    else {
+        indicator.innerHTML = "&#x25B6";
+    }
+}
+
 function reloadCollapsibles() {
-    coll = document.getElementsByClassName("collapsible");
+    coll_all = Array.from(document.getElementsByClassName("collapsible"));
+
+    var coll = coll_all;
+    // var coll = coll_all.filter(function(element) {return !element.classList.contains('has-click-event');});
 
     for (let i = 0; i < coll.length; i++) {
-        coll[i].addEventListener("click", function() {
-            this.classList.toggle("collapsible-active");
-            var content = this.nextElementSibling;
-            if (content.style.maxHeight){
-            content.style.maxHeight = null;
-            } else {
-            content.style.maxHeight = content.scrollHeight + "px";
-            } 
-            reloadApexCollapsibleHeights();
-        });
+        coll[i].addEventListener("click", toggleCollapsible);
+        // coll[i].classList.add('has-click-event');
+    }
+
+    coll_indicator = document.getElementsByClassName("collapsible-indicator");
+
+    for (let i = 0; i < coll_indicator.length; i++) {
+        coll_indicator[i].addEventListener("click", toggleCollapsibleIndicator);
     }
 }
 
@@ -23,16 +61,7 @@ function reloadApexCollapsibles() {
     apex_coll = document.getElementsByClassName("collapsible apex-upgrade");
 
     for (let i = 0; i < apex_coll.length; i++) {
-        apex_coll[i].addEventListener("click", function() {
-            this.classList.toggle("collapsible-active");
-            var content = this.nextElementSibling;
-            if (content.style.maxHeight){
-            content.style.maxHeight = null;
-            } else {
-            content.style.maxHeight = content.scrollHeight + "px";
-            }
-            reloadApexCollapsibleHeights();
-        });
+        apex_coll[i].addEventListener("click", toggleApexCollapsible);
     }
 }
 
@@ -59,10 +88,21 @@ function collapseAllApexCollapsible() {
 function init() {
     // document.getElementById("defaultTab").click();
 
+    // prep contribution form
+    document.getElementById("contribution-form-wrapper").addEventListener('click', function(event) {
+        if (event.target === document.getElementById("contribution-form-outside-click")) {
+            hideContributionForm();
+        }
+    });
+
+    // load all the ships
+
     for (i in ships) {
         document.getElementById(ships[i].type).innerHTML += `
         <div id="${ships[i].id}" class="ship" onclick="showApexInfo('${ships[i].id}'); collapseAllApexCollapsible();">${ships[i].displayName}</div>
         `;
+
+        document.getElementById("ship-search-list").innerHTML += `<p class="ship-search-item" onclick="pickShipForm(${i})" value="${ships[i].id}">${ships[i].displayName}</p>`
     }
 
     for (i=1; i<21; i++) {
@@ -216,10 +256,12 @@ function showApexInfo(id) {
 
 
 
-            document.getElementById(`apex-${i}-content`).innerHTML += `<div class="contributor">Data for this Apex level was provided by <strong>${ship.apex[i].contributor}</strong>!<br>Want to contribute? Contact <strong>linaTetris</strong> in-game or on Discord!</div>`
+            // document.getElementById(`apex-${i}-content`).innerHTML += `<div class="contributor">Data for this Apex level was provided by <strong>${ship.apex[i].contributor}</strong>!<br>Want to contribute? Contact <strong>linaTetris</strong> in-game or on Discord!</div>`
+            document.getElementById(`apex-${i}-content`).innerHTML += `<div class="contributor"><span style="font-size:20px;">Data for this Apex level was provided by <strong>${ship.apex[i].contributor.name}</strong>!</span><br>Want to contribute? <span class="showApexForm" onclick="showContributionForm()">Click here to learn more!</span></div>`
         }
         else {
-            document.getElementById(`apex-${i}-content`).innerHTML = "<p style='font-size:24px; text-align:center';>No information available!<br>Have data for this Apex level? Contact <strong>linaTetris</strong> in-game or on Discord!</p>";
+            // document.getElementById(`apex-${i}-content`).innerHTML = "<p style='font-size:24px; text-align:center';>No information available!<br>Have data for this Apex level? Contact <strong>linaTetris</strong> in-game or on Discord!</p>";
+            document.getElementById(`apex-${i}-content`).innerHTML = `<p style='font-size:24px; text-align:center';>No information available!<br>Have data for this Apex level? <span class="showApexForm" onclick="showContributionForm()">Fill out this form to contribute!</span></p>`;
         }
     }
     reloadApexCollapsibles();
@@ -255,3 +297,22 @@ function openTab(event, tab) {
 }
 
 
+function toggleSidebar() {
+    if (document.getElementById("sidebar").classList.contains("sidebar-hidden")) {
+        document.getElementById("sidebar").classList.remove("sidebar-hidden");
+            
+        document.getElementById("sidebar").style.transform = "";
+
+        document.getElementById("apex-content-wrapper").style.width = "calc(100% - 300px)";
+        document.getElementById("apex-content-wrapper").style.left = "300px";
+    }
+    else {
+        document.getElementById("sidebar").classList.add("sidebar-hidden");
+
+        document.getElementById("sidebar").style.transform = "translateX(-300px)";
+
+        document.getElementById("apex-content-wrapper").style.width = "100%";
+        document.getElementById("apex-content-wrapper").style.left = "0px";
+
+    }
+}

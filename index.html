@@ -2,6 +2,10 @@
     <head>
         <title>Apex Database</title>
 
+        <!-- remote dependencies: try to get rid of them soon -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
         <!-- dependencies -->
         <script type="text/javascript" src="prototypes.js"></script>
         <script type="text/javascript" src="classes.js"></script>
@@ -15,59 +19,118 @@
 
         <!-- main scripts -->
         <script type="text/javascript" src="apex-data.js"></script>
+        <script type="text/javascript" src="apex-form.js"></script>
         <script type="text/javascript" src="data.js"></script>
         <script type="text/javascript" src="init.js"></script>
 
+        <link rel="stylesheet" href="fonts.css">
         <link rel="stylesheet" href="style.css">
     </head>
     <body onload="init()">
+        <div id="contribution-form-wrapper" style="display:none;">
+            <div class="center-outer"><div class="center-middle" id="contribution-form-outside-click">
+                
+                <div class="center-inner" id="contribution-form">
+                    <h1 style="width:100%; margin-top: 0px; font-size: 42px; text-align: center;">Contribution Form</h1>
+                    
+                    <table style="width: 100%; padding: 0px 20px;">
+                        <tbody>
+                            <tr style="padding: 10px 0px;">
+                                <td style="width: 110px; font-size: 20px; font-weight: 700;">
+                                    Select Ship
+                                </td>
+                                <td style="width: auto; padding: 0px 25px;">
+                                    <div id="ship-dropdown-wrapper">
+                                        <!-- <div id="ship-dropdown">
+                                            selected ship name placeholder
+                                            <input type="text" placeholder="Search..." id="ship-search" onkeyup="filterShips()">
+                                            <select id="ship-search-list">
+                                                <option>Foo</option>
+                                                <option>Bar</option>
+                                            </select>
+                                            </div>
+                                        </div> -->
+                                        <div id="ship-dropdown-wrapper2">
+                                            <input type="text" placeholder="Search..." id="ship-dropdown" onclick="showShipList()" onkeyup="filterShips()">
+                                            <div id="ship-search-list">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td style="width: 180px; text-align: right; font-size: 20px; font-weight: 700;">
+                                    Select Apex Level
+                                </td>
+                            </tr>
+                            <tr style="height:180px">
+                                <td></td>
+                                <td></td>
+                                <td style="text-align: center; background-image: url(assets/blank_apex.png); background-repeat: no-repeat; background-size: 140px auto; background-position: center center;">
+                                    <!-- <img style="margin:auto" src="assets/blank_apex.png" width="140"> -->
+                                    <input type="number" value="1" min="1" max="20" step="1" id="apex-level-selector" onkeypress="clampApexInput()" onkeyup="clampApexInput()" onkeydown="clampApexInput()">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table>
+                        <tbody id="basic-stats-input">
+                            <tr>
+                                <td style="padding-right: 20px">Bonus HP:</td>
+                                <td><input type="number" value="0" min="0" max="2147483647" step="1" id="hp-bonus-input" class="basic-stat-input" onkeypress="clampBasicStatInput(event, this)" onkeyup="clampBasicStatInput(event, this)" onkeydown="clampBasicStatInput(event, this)"></td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 20px">Bonus Cruise Speed:</td>
+                                <td><input type="number" value="0" min="0" max="2147483647" step="1" id="cruise-bonus-input" class="basic-stat-input" onkeypress="clampBasicStatInput(event, this)" onkeyup="clampBasicStatInput(event, this)" onkeydown="clampBasicStatInput(event, this)"></td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 20px">Bonus Warp Speed:</td>
+                                <td><input type="number" value="0" min="0" max="2147483647" step="1" id="warp-bonus-input" class="basic-stat-input" onkeypress="clampBasicStatInput(event, this)" onkeyup="clampBasicStatInput(event, this)" onkeydown="clampBasicStatInput(event, this)"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div id="contribution-form-variant-list">
+                        
+                    </div>
+                    
+                    <table>
+                        <tbody id="contact-info-input">
+                            <tr>
+                                <td style="padding-right: 20px">Your Username:</td>
+                                <td><input type="text" placeholder="Your username" id="name-input" class="contact-info-input"></td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 20px">Your Discord Handle:</td>
+                                <td><input type="text" placeholder="Your discord handle" id="discord-input" class="contact-info-input"></td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 20px">Your Infinite Lagrange Player ID:</td>
+                                <td><input type="number" placeholder="Your ID (i.e. 21048500341)" min="0" step="1" id="player-id-input" class="contact-info-input"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <button id="generate-apex-code" onclick="generateApexCode()">Submit Form</button>
+                    <h2>Generated code</h2>
+                    <p style="font-size:18px;">Make sure the information you put in is correct! Send the generated code to <strong>linaTetris</strong> on Discord and attach any relevant screenshots. Github integration coming soon.</p>
+                    <div id="generated-code-container-outer"><div id="generated-code-container">
+                        <pre id="generated-code"></pre>
+                    </div></div>
+                </div>
+
+            </div></div>
+        </div>
+
         <div class="tab" style="margin:0px;">
-            <!-- <div>
-                <button class="tablinks" id="defaultTab" onclick="openTab(event, 'frigate')">Frigates</button>
-                <span id="frigateNotif" class="notif">!</span>
-            </div>
-            <div>
-                <button class="tablinks" onclick="openTab(event, 'destroyer')">Destroyers</button>
-                <span id="destroyerNotif" class="notif">!</span>
-            </div>
-            <div>
-                <button class="tablinks" onclick="openTab(event, 'cruiser')">Cruisers</button>
-                <span id="cruiserNotif" class="notif">!</span>
-            </div>
-            <div>
-                <button class="tablinks" onclick="openTab(event, 'battlecruiser')">Battlecruisers</button>
-                <span id="battlecruiserNotif" class="notif">!</span>
-            </div>
-            <div>
-                <button class="tablinks" onclick="openTab(event, 'carrier')">Carriers</button>
-                <span id="carrierNotif" class="notif">!</span>
-            </div>
-            <div>
-                <button class="tablinks" onclick="openTab(event, 'fighter')">Fighters</button>
-                <span id="fighterNotif" class="notif">!</span>
-            </div>
-            <div>
-                <button class="tablinks" onclick="openTab(event, 'corvette')">Corvettes</button>
-                <span id="corvetteNotif" class="notif">!</span>
-            </div>
-            <div>
-                <button class="tablinks" onclick="openTab(event, 'battleship')">Battleships</button>
-                <span id="battleshipNotif" class="notif">!</span>
-            </div>
-            <div>
-                <button class="tablinks" onclick="openTab(event, 'miner')">Utility Ships</button>
-                <span id="minerNotif" class="notif">!</span>
-            /div> -->
-            <table style="width: 100%; padding: 0px 50px; align-content: center">
+            <table style="width: 100%; margin:0px; padding: 0px; padding-right: 50px; align-content: center">
                 <tbody>
                     <tr>
-                        <td style="width:10%"></td>
-                        <td style="width:80%">
+                        <td style="width:10%"><button id="togglesidebar" onclick="toggleSidebar()"><img height="40" src="assets/sidebar.png" style="transform: translateY(-12px);"></button></td>
+                        <td style="width:80%; padding-bottom: 25px">
                             <div style="text-align: center; float: none; ">
                                 <p style="font-size: 20px; font-weight: 700; margin:0px;">Apex Database</p>
                             </div>
                         </td>
-                        <td style="width:10%; text-align: right;">v1.0.0</td>
+                        <td style="width:10%; text-align: right; padding-bottom: 25px">v1.1.0</td>
                     </tr>
                 </tbody>
             </table>
@@ -138,7 +201,6 @@
                             </tr>
                         </tbody>
                     </table>
-
                 </div>
             </div>
         </div>

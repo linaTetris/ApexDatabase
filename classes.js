@@ -1,5 +1,5 @@
 class Ship {
-    constructor(name, type, manufacturer, variants, apex=[]) {
+    constructor(name, type, manufacturer, variants, apex=[], apexReferenceVariable="") {
         this.id = name.replace(/\-/g, '').replace(/\s+/g, '-').replace(/\'/g, '').replace(/\./g, '').toLowerCase();
         
         this.displayName = name;
@@ -12,15 +12,22 @@ class Ship {
         this.variantCount = variants.length;
         
         this.apex = apex;
+        this.apexReferenceVariable = apexReferenceVariable;
     }
 }
 
 
 class SuperCap extends Ship {
-    constructor(name, type, manufacturer, variants, apex=[], modules) {
-        super(name, type, manufacturer, variants, apex);
+    constructor(name, type, manufacturer, variants, apex=[], apexReferenceVariable="", modules) {
+        super(name, type, manufacturer, variants, apex, apexReferenceVariable);
 
         this.modules = modules; // array of modules: [[M],[A],[B],[C]]...
+        this.moduleCount = modules.length;
+
+        this.slotCount = [];
+        for (let i=0; i<this.moduleCount; i++) {
+            this.slotCount[i] = this.modules[i].length;
+        }
     }
 }
 
@@ -43,14 +50,14 @@ class ShipVariant {
 class ApexGeneral { // general apex stuff, like extra hp.
     constructor(level, hp=null, cruise=null, warp=null, contributor=null, variantProperties=[]) { // variantProperties should be an array with length equal to the number of variants (ie for FG300, 3.) each sub-array is ApexUpgrade[]
         this.level = level;
-        if (!!hp) {this.hp = hp;}
+        if (!!hp || hp == 0) {this.hp = hp;}
         if (!!cruise || cruise == 0) {this.cruise = cruise;}
         if (!!warp || warp == 0) {this.warp = warp;}
         if (!!contributor) {this.contributor = contributor;} // name of who posted it
 
         if (!!variantProperties) {this.variantProperties = variantProperties;} // if no variant properties, nothing should be printed.
 
-        if (!!hp && (!!cruise || cruise == 0) && (!!warp || warp == 0) && !!variantProperties) {this.known = true;}
+        if ((!!hp || hp == 0) && (!!cruise || cruise == 0) && (!!warp || warp == 0) && !!variantProperties) {this.known = true;}
         else {this.known = false;}
     }
 }
@@ -92,5 +99,13 @@ class ApexUpgrade { // tp based stuff, ie Crux Apex 7 with C1/C2 upgrades.
         for (let i=0; i<description.length; i++) {
             this.description.push({effect: description[i], tp: tp[i]});
         }
+    }
+}
+
+class Contributor {
+    constructor(name, discord="", gameID=0) {
+        this.name = name;
+        this.discord = discord;
+        this.gameID = gameID;
     }
 }
