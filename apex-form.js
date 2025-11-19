@@ -139,7 +139,7 @@ function formAddUpgrade(shipID, col, row, table="") {
         <div class="apex-upgrade-wrapper removable">
             <p class="apex-upgrade-remove" onclick="formRemoveUpgrade(${shipID}, ${col}, ${row}, ${table})">x</p>
             <button class="click-me-temp collapsible collapsible-indicator apex-upgrade">
-                <span class="collapsible-indicator-arrow">&#x25B6</span>&nbsp;&nbsp;<input placeholder="Upgrade Name" class="apex-input" id="apex-input-${tableID}${col}-${row}" onclick="stop_ImmediatePropagation(event)" onkeydown="stopAccidentalClick(event); this.value += (event.keyCode === 32) ? ' ' : '';">
+                <span class="collapsible-indicator-arrow">&#x25B6</span>&nbsp;&nbsp;<input placeholder="Upgrade Name" class="apex-input" id="apex-input-${tableID}${col}-${row}" onclick="stop_ImmediatePropagation(event)" onkeydown="stopAccidentalClick(event); if (event.keyCode === 32) {const s = this.selectionStart; this.value = this.value.slice(0, s) + ' ' + this.value.slice(this.selectionEnd); this.selectionStart = this.selectionEnd = s + 1;}">
             </button>
             <div class="collapsible-content apex-upgrade" style="display:block" ><table style="padding:5px;width:100%"><thead><tr><th style="text-align: left;">Effect</th><th style="width: 50px; text-align:left">TP</th><th style="width: 25px"></th></tr></thead><tbody>
             <tr>
