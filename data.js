@@ -106,7 +106,7 @@ var ships = [
     new Ship("Aldabra", "destroyer", "noma", [
         new ShipVariant(0, "Generic Type", "Heavy Cannon Destroyer"),
         new ShipVariant(1, "Armored Type", "Heavy Assault Destroyer"),
-        new ShipVariant(2, "Armored Type", "Heavy Anti-Aircraft Destroyer"),
+        new ShipVariant(2, "Anti-Aircraft Type", "Heavy Anti-Aircraft Destroyer"),
     ], apex_aldabra, "apex_aldabra"),
 
     new Ship("Guardian", "destroyer", "antonios", [
