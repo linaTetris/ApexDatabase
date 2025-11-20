@@ -32,89 +32,98 @@
                 
                 <div class="center-inner" id="contribution-form">
                     <h1 style="width:100%; margin-top: 0px; font-size: 42px; text-align: center;">Contribution Form</h1>
-                    
-                    <table style="width: 100%; padding: 0px 20px;">
-                        <tbody>
-                            <tr style="padding: 10px 0px;">
-                                <td style="width: 110px; font-size: 20px; font-weight: 700;">
-                                    Select Ship
-                                </td>
-                                <td style="width: auto; padding: 0px 25px;">
-                                    <div id="ship-dropdown-wrapper">
-                                        <!-- <div id="ship-dropdown">
-                                            selected ship name placeholder
-                                            <input type="text" placeholder="Search..." id="ship-search" onkeyup="filterShips()">
-                                            <select id="ship-search-list">
-                                                <option>Foo</option>
-                                                <option>Bar</option>
-                                            </select>
-                                            </div>
-                                        </div> -->
-                                        <div id="ship-dropdown-wrapper2">
-                                            <input type="text" placeholder="Search..." id="ship-dropdown" onclick="showShipList()" onkeyup="filterShips()">
-                                            <div id="ship-search-list">
+                    <div id="form-input-container">
+                        <table style="width: 100%; padding: 0px 20px;">
+                            <tbody>
+                                <tr style="padding: 10px 0px;">
+                                    <td style="width: 110px; font-size: 20px; font-weight: 700;">
+                                        Select Ship
+                                    </td>
+                                    <td style="width: auto; padding: 0px 25px;">
+                                        <div id="ship-dropdown-wrapper">
+                                            <!-- <div id="ship-dropdown">
+                                                selected ship name placeholder
+                                                <input type="text" placeholder="Search..." id="ship-search" onkeyup="filterShips()">
+                                                <select id="ship-search-list">
+                                                    <option>Foo</option>
+                                                    <option>Bar</option>
+                                                </select>
+                                                </div>
+                                            </div> -->
+                                            <div id="ship-dropdown-wrapper2">
+                                                <input type="text" placeholder="Search..." id="ship-dropdown" onclick="showShipList()" onkeyup="filterShips()">
+                                                <div id="ship-search-list">
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </td>
-                                <td style="width: 180px; text-align: right; font-size: 20px; font-weight: 700;">
-                                    Select Apex Level
-                                </td>
-                            </tr>
-                            <tr style="height:180px">
-                                <td></td>
-                                <td></td>
-                                <td style="text-align: center; background-image: url(assets/blank_apex.png); background-repeat: no-repeat; background-size: 140px auto; background-position: center center;">
-                                    <!-- <img style="margin:auto" src="assets/blank_apex.png" width="140"> -->
-                                    <input type="number" value="1" min="1" max="20" step="1" id="apex-level-selector" onkeypress="clampApexInput()" onkeyup="clampApexInput()" onkeydown="clampApexInput()">
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table>
-                        <tbody id="basic-stats-input">
-                            <tr>
-                                <td style="padding-right: 20px">Bonus HP:</td>
-                                <td><input type="number" value="0" min="0" max="2147483647" step="1" id="hp-bonus-input" class="basic-stat-input" onkeypress="clampBasicStatInput(event, this)" onkeyup="clampBasicStatInput(event, this)" onkeydown="clampBasicStatInput(event, this)"></td>
-                            </tr>
-                            <tr>
-                                <td style="padding-right: 20px">Bonus Cruise Speed:</td>
-                                <td><input type="number" value="0" min="0" max="2147483647" step="1" id="cruise-bonus-input" class="basic-stat-input" onkeypress="clampBasicStatInput(event, this)" onkeyup="clampBasicStatInput(event, this)" onkeydown="clampBasicStatInput(event, this)"></td>
-                            </tr>
-                            <tr>
-                                <td style="padding-right: 20px">Bonus Warp Speed:</td>
-                                <td><input type="number" value="0" min="0" max="2147483647" step="1" id="warp-bonus-input" class="basic-stat-input" onkeypress="clampBasicStatInput(event, this)" onkeyup="clampBasicStatInput(event, this)" onkeydown="clampBasicStatInput(event, this)"></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                                    </td>
+                                    <td style="width: 180px; text-align: right; font-size: 20px; font-weight: 700;">
+                                        Select Apex Level
+                                    </td>
+                                </tr>
+                                <tr style="height:180px">
+                                    <td></td>
+                                    <td></td>
+                                    <td style="text-align: center; background-image: url(assets/blank_apex.png); background-repeat: no-repeat; background-size: 140px auto; background-position: center center;">
+                                        <!-- <img style="margin:auto" src="assets/blank_apex.png" width="140"> -->
+                                        <input type="number" value="1" min="1" max="20" step="1" id="apex-level-selector" onkeypress="clampApexInput()" onkeyup="clampApexInput()" onkeydown="clampApexInput()">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table>
+                            <tbody id="basic-stats-input">
+                                <tr>
+                                    <td style="padding-right: 20px">Bonus HP:</td>
+                                    <td><input type="number" value="0" min="0" max="2147483647" step="1" id="hp-bonus-input" class="basic-stat-input" onkeypress="clampBasicStatInput(event, this)" onkeyup="clampBasicStatInput(event, this)" onkeydown="clampBasicStatInput(event, this)"></td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-right: 20px">Bonus Cruise Speed:</td>
+                                    <td><input type="number" value="0" min="0" max="2147483647" step="1" id="cruise-bonus-input" class="basic-stat-input" onkeypress="clampBasicStatInput(event, this)" onkeyup="clampBasicStatInput(event, this)" onkeydown="clampBasicStatInput(event, this)"></td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-right: 20px">Bonus Warp Speed:</td>
+                                    <td><input type="number" value="0" min="0" max="2147483647" step="1" id="warp-bonus-input" class="basic-stat-input" onkeypress="clampBasicStatInput(event, this)" onkeyup="clampBasicStatInput(event, this)" onkeydown="clampBasicStatInput(event, this)"></td>
+                                </tr>
+                            </tbody>
+                        </table>
 
-                    <div id="contribution-form-variant-list">
+                        <div id="contribution-form-variant-list">
+                            
+                        </div>
                         
-                    </div>
-                    
-                    <table>
-                        <tbody id="contact-info-input">
-                            <tr>
-                                <td style="padding-right: 20px">Your Username:</td>
-                                <td><input type="text" placeholder="Your username" id="name-input" class="contact-info-input"></td>
-                            </tr>
-                            <tr>
-                                <td style="padding-right: 20px">Your Discord Handle:</td>
-                                <td><input type="text" placeholder="Your discord handle" id="discord-input" class="contact-info-input"></td>
-                            </tr>
-                            <tr>
-                                <td style="padding-right: 20px">Your Infinite Lagrange Player ID:</td>
-                                <td><input type="number" placeholder="Your ID (i.e. 21048500341)" min="0" step="1" id="player-id-input" class="contact-info-input"></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                        <table>
+                            <tbody id="contact-info-input">
+                                <tr>
+                                    <td style="padding-right: 20px">Your Username:</td>
+                                    <td><input type="text" placeholder="Your username" id="name-input" class="contact-info-input"></td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-right: 20px">Your Discord Handle:</td>
+                                    <td><input type="text" placeholder="Your discord handle" id="discord-input" class="contact-info-input"></td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-right: 20px">Your Infinite Lagrange Player ID:</td>
+                                    <td><input type="number" placeholder="Your ID (i.e. 21048500341)" min="0" step="1" id="player-id-input" class="contact-info-input"></td>
+                                </tr>
+                            </tbody>
+                        </table>
 
-                    <button id="generate-apex-code" onclick="generateApexCode()">Submit Form</button>
+                        <button id="generate-apex-code" onclick="generateApexCode()">Submit Form</button>
+                    </div>
+
                     <h2>Generated code</h2>
                     <p style="font-size:18px;">Make sure the information you put in is correct! Send the generated code to <strong>linaTetris</strong> on Discord and attach any relevant screenshots. Github integration coming soon.</p>
                     <div id="generated-code-container-outer"><div id="generated-code-container">
                         <pre id="generated-code"></pre>
                     </div></div>
+
+                    <div id="submit-confirmation">
+                        <input id="verify-correct" type="checkbox" onchange="verifyCorrect()">
+                        <label style="font-size:18px">Check the box to verify you have double checked everything. Then submit once everything has been verified. You will not be able to modify the form once the box is checked.</label>
+                        <br>
+                        <button id="submit-PR" onclick="console.log('submitting pr'); sendPR()" disabled>Submit Pull Request!</button>
+                    </div>
                 </div>
 
             </div></div>

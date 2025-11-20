@@ -1,81 +1,3 @@
-/* SAMPLE APEX DATA
-var apex_fg300 = [0,
-    new ApexGeneral(1,50,0,0, new Contributor("linaTetris","linatetris",21048500341)),
-    new ApexGeneral(2,80,0,0, new Contributor("linaTetris","linatetris",21048500341)),
-    new ApexGeneral(3,90,30,0, new Contributor("linaTetris","linatetris",21048500341)),
-    new ApexGeneral(4,100,30,0, new Contributor("linaTetris","linatetris",21048500341)),
-    new ApexGeneral(5,150,30,150, new Contributor("linaTetris","linatetris",21048500341)),
-    new ApexGeneral(6),
-    new ApexGeneral(7,250,30,150, new Contributor("linaTetris","linatetris",21048500341)),
-    new ApexGeneral(8,270,40,200, new Contributor("linaTetris","linatetris",21048500341),[[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP"], [2]),new ApexUpgrade("Sympathetic Detonation", ["+18% chance for +36% Crit damage"], [2])],[],[]]),
-    new ApexGeneral(9,270,40,200, new Contributor("linaTetris","linatetris",21048500341),[[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP", "+2% HP"], [2,2]),new ApexUpgrade("Sympathetic Detonation", ["+18% chance for +36% Crit damage"], [2])],[],[]]),
-    new ApexGeneral(10),
-    new ApexGeneral(11),
-    new ApexGeneral(12),
-    new ApexGeneral(13),
-    new ApexGeneral(14),
-    new ApexGeneral(15),
-    new ApexGeneral(16),
-    new ApexGeneral(17),
-    new ApexGeneral(18),
-    new ApexGeneral(19),
-    new ApexGeneral(20)
-];
-
-
-var apex_sample = [0,
-    new ApexGeneral(1),
-    new ApexGeneral(2),
-    new ApexGeneral(3),
-    new ApexGeneral(4),
-    new ApexGeneral(5),
-    new ApexGeneral(6),
-    new ApexGeneral(7),
-    new ApexGeneral(8),
-    new ApexGeneral(9),
-    new ApexGeneral(10),
-    new ApexGeneral(11),
-    new ApexGeneral(12),
-    new ApexGeneral(13),
-    new ApexGeneral(14),
-    new ApexGeneral(15),
-    new ApexGeneral(16),
-    new ApexGeneral(17),
-    new ApexGeneral(18),
-    new ApexGeneral(19),
-    new ApexGeneral(20)
-];
-*/
-
-/* SAMPLE SUPERCAP DATA
-this sample is from ST59, which has 3 mods per M,A,B,C slot.
-
-    new ApexSuperCap(8, 69420, 0, 50, "Fake News", [ 
-        [[],[],[]] , 
-        [[],[],[]] , 
-        [ [new ApexUpgrade("Nuclear Tipped Missiles", ["+1000 DPH to Melon Launcher"], [12])] , [] , [] ],
-        [ [] , [new ApexUpgrade("Reinforced Structure", ["+1% HP"], [2])] , [new ApexUpgrade("Explosive Reactive Armor", ["+15 Physical Resistance"], [2])] ] 
-    ]),
-*/
-
-/*
------ Scratchpad -----
-Light Cone A missing!
-new ApexGeneral(15,16000,10,100,new Contributor("JackCross"), [
-    [new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP"], [2])],
-    [new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP"], [2])],
-    [new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP"], [2])]
-    ]),
-
-Callisto C missing!
-new ApexGeneral(10, 110??, 10, 50, new Contributor("JackCross"), [[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP", "+2% HP", "+3% HP"], [2,2,2]), new ApexUpgrade("Warhead Modification", ["+7 DPH on MK2-AT-8-700 Cluster Torpedo"], [2]), new ApexUpgrade("Sympathetic Detonation", ["+6% chance for +12% Crit damage on Generic Battery System"], [2]],[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP", "+2% HP", "+3% HP"], [2,2,2]), new ApexUpgrade("Warhead Modification", ["+52 DPH on MK2-AT-8-720A Heavy Torpedo"], [2]), new ApexUpgrade("Sympathetic Detonation", ["+6% chance for +12% Crit damage on Generic Battery System"], [2]],[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP", "+2% HP", "+3% HP"], [2,2,2]), new ApexUpgrade("<strong>Unknown upgrades! Contact linaTetris</strong>", ["<strong>Unknown! If you have Callisto C apexed, you may contribute!</strong>"], ["???"])]])
-
-
-
-
-
-
-*/
 var apex_fg300 = [0,
     new ApexGeneral(1, 145, 0, 0, new Contributor("linaTetris","linatetris",21048500341)),
     new ApexGeneral(2),
@@ -121,7 +43,6 @@ var apex_mare_i = [0,
     new ApexGeneral(19),
     new ApexGeneral(20)
 ];
-
 
 var apex_mare_t = [0,
     new ApexGeneral(1,170,0,0, new Contributor("linaTetris","linatetris",21048500341)),
@@ -238,7 +159,6 @@ var apex_ino = [0,
     new ApexGeneral(20)
 ];
 
-
 var apex_ruby = [0,
     new ApexGeneral(1,230,0,0, new Contributor("linaTetris","linatetris",21048500341)),
     new ApexGeneral(2),
@@ -261,7 +181,6 @@ var apex_ruby = [0,
     new ApexGeneral(19),
     new ApexGeneral(20)
 ];
-
 
 var apex_m470 = [0,
     new ApexGeneral(1,195,0,0, new Contributor("linaTetris","linatetris",21048500341)),
@@ -286,7 +205,6 @@ var apex_m470 = [0,
     new ApexGeneral(20)
 ];
 
-
 var apex_carilion = [0,
     new ApexGeneral(1,115,0,0, new Contributor("linaTetris","linatetris",21048500341)),
     new ApexGeneral(2),
@@ -309,7 +227,6 @@ var apex_carilion = [0,
     new ApexGeneral(19),
     new ApexGeneral(20)
 ];
-
 
 var apex_reliat = [0,
     new ApexGeneral(1,145,0,0, new Contributor("linaTetris","linatetris",21048500341)),
@@ -334,7 +251,6 @@ var apex_reliat = [0,
     new ApexGeneral(20)
 ];
 
-
 var apex_zircon = [0,
     new ApexGeneral(1,185,0,0, new Contributor("linaTetris","linatetris",21048500341)),
     new ApexGeneral(2),
@@ -357,9 +273,7 @@ var apex_zircon = [0,
     new ApexGeneral(19),
     new ApexGeneral(20)
 ];
-
 // destroyers
-
 var apex_ac721 = [0,
     new ApexGeneral(1,470,0,0, new Contributor("linaTetris","linatetris",21048500341)),
     new ApexGeneral(2),
@@ -382,7 +296,6 @@ var apex_ac721 = [0,
     new ApexGeneral(19),
     new ApexGeneral(20)
 ];
-
 
 var apex_eris = [0,
     new ApexGeneral(1,420,0,0, new Contributor("linaTetris","linatetris",21048500341)),
@@ -430,7 +343,6 @@ var apex_ceres = [0,
     new ApexGeneral(20)
 ];
 
-
 var apex_quaoar = [0,
     new ApexGeneral(1,420,0,0, new Contributor("linaTetris","linatetris",21048500341)),
     new ApexGeneral(2),
@@ -453,7 +365,6 @@ var apex_quaoar = [0,
     new ApexGeneral(19),
     new ApexGeneral(20)
 ];
-
 
 var apex_taurus = [0,
     new ApexGeneral(1,495,0,0, new Contributor("linaTetris","linatetris",21048500341)),
@@ -638,9 +549,7 @@ var apex_vanguard = [0,
     new ApexGeneral(19),
     new ApexGeneral(20)
 ];
-
 // cruisers
-
 var apex_kccpv = [0,
     new ApexGeneral(1,715,0,0, new Contributor("linaTetris","linatetris",21048500341)),
     new ApexGeneral(2),
@@ -697,8 +606,7 @@ var apex_callisto = [0, // apex 10 is incomplete!
     new ApexGeneral(7),
     new ApexGeneral(8),
     new ApexGeneral(9),
-    new ApexGeneral(10),
-    // new ApexGeneral(10, 4650, 10, 50, new Contributor("linaTetris","linatetris",21048500341), [[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP", "+2% HP", "+3% HP"], [2,2,2]), new ApexUpgrade("Warhead Modification", ["+7 DPH on MK2-AT-8-700 Cluster Torpedo"], [2]), new ApexUpgrade("Sympathetic Detonation", ["+6% chance for +12% Crit damage on Generic Battery System"], [2])],[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP", "+2% HP", "+3% HP"], [2,2,2]), new ApexUpgrade("Warhead Modification", ["+52 DPH on MK2-AT-8-720A Heavy Torpedo"], [2]), new ApexUpgrade("Sympathetic Detonation", ["+6% chance for +12% Crit damage on Generic Battery System"], [2])],[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP", "+2% HP", "+3% HP"], [2,2,2]), new ApexUpgrade("<strong>Unknown upgrades! Contact linaTetris</strong>", ["<strong>Unknown! If you have Callisto C apexed, you may contribute!</strong>"], ["??"])]]),
+    new ApexGeneral(10), // new ApexGeneral(10, 4650, 10, 50, new Contributor("linaTetris","linatetris",21048500341), [[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP", "+2% HP", "+3% HP"], [2,2,2]), new ApexUpgrade("Warhead Modification", ["+7 DPH on MK2-AT-8-700 Cluster Torpedo"], [2]), new ApexUpgrade("Sympathetic Detonation", ["+6% chance for +12% Crit damage on Generic Battery System"], [2])],[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP", "+2% HP", "+3% HP"], [2,2,2]), new ApexUpgrade("Warhead Modification", ["+52 DPH on MK2-AT-8-720A Heavy Torpedo"], [2]), new ApexUpgrade("Sympathetic Detonation", ["+6% chance for +12% Crit damage on Generic Battery System"], [2])],[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP", "+2% HP", "+3% HP"], [2,2,2]), new ApexUpgrade("<strong>Unknown upgrades! Contact linaTetris</strong>", ["<strong>Unknown! If you have Callisto C apexed, you may contribute!</strong>"], ["??"])]]),
     new ApexGeneral(11),
     new ApexGeneral(12),
     new ApexGeneral(13),
@@ -872,7 +780,6 @@ var apex_ranger = [0,
     new ApexGeneral(20)
 ];
 
-
 var apex_st59 = [0,
     new ApexSuperCap(1,2190,0,0, new Contributor("linaTetris","linatetris",21048500341)),
     new ApexSuperCap(2),
@@ -881,8 +788,7 @@ var apex_st59 = [0,
     new ApexSuperCap(5),
     new ApexSuperCap(6),
     new ApexSuperCap(7, 21780, 0, 50, new Contributor("Atrophos","_atrophos",20836800057), [ [[],[],[]] , [ [],[],[] ] , [ [new ApexUpgrade("Warhead Modification", ["+5 DPH to Melon Launcher"], [2])] , [new ApexUpgrade("Airborne Weapon Maintenance", ["+1% Damage for loaded aircraft"], [2])] , [] ], [ [] , [] , [] ] ]),
-    new ApexSuperCap(8),
-    // new ApexSuperCap(8, 69420, 0, 50, "Fake News", [ [[],[],[]] , [ [],[],[] ] , [ [new ApexUpgrade("Nuclear Tipped Missiles", ["+1000 DPH to Melon Launcher"], [12])] , [] , [] ], [ [] , [new ApexUpgrade("Reinforced Structure", ["+1% HP"], [2])] , [new ApexUpgrade("Explosive Reactive Armor", ["+15 Physical Resistance"], [2])] ] ]),
+    new ApexSuperCap(8), // new ApexSuperCap(8, 69420, 0, 50, "Fake News", [ [[],[],[]] , [ [],[],[] ] , [ [new ApexUpgrade("Nuclear Tipped Missiles", ["+1000 DPH to Melon Launcher"], [12])] , [] , [] ], [ [] , [new ApexUpgrade("Reinforced Structure", ["+1% HP"], [2])] , [new ApexUpgrade("Explosive Reactive Armor", ["+15 Physical Resistance"], [2])] ] ]),
     new ApexSuperCap(9),
     new ApexSuperCap(10),
     new ApexSuperCap(11),
@@ -897,7 +803,6 @@ var apex_st59 = [0,
     new ApexSuperCap(20)
 ];
 
-
 var apex_es = [0,
     new ApexSuperCap(1,2350,0,0, new Contributor("linaTetris","linatetris",21048500341)),
     new ApexSuperCap(2),
@@ -906,8 +811,7 @@ var apex_es = [0,
     new ApexSuperCap(5),
     new ApexSuperCap(6),
     new ApexSuperCap(7),
-    new ApexSuperCap(8),
-    // new ApexSuperCap(8, 69420, 0, 50, "Fake News", [ [[],[]] , [ [new ApexUpgrade("Nuclear Tipped Missiles", ["+1000 DPH to Supernova Torpedo every 2 rounds"], [25])] , [new ApexUpgrade("Nuclear Tipped Missiles", ["+1000 DPH to Supernova Torpedo every 2 rounds"], [25])] , [new ApexUpgrade("Fusion Powered Missiles", ["+1000 DPH to Supernova Torpedo every 2 rounds"], [25])] ], [[],[]], [[],[],[]], [[],[]] ]),
+    new ApexSuperCap(8), // new ApexSuperCap(8, 69420, 0, 50, "Fake News", [ [[],[]] , [ [new ApexUpgrade("Nuclear Tipped Missiles", ["+1000 DPH to Supernova Torpedo every 2 rounds"], [25])] , [new ApexUpgrade("Nuclear Tipped Missiles", ["+1000 DPH to Supernova Torpedo every 2 rounds"], [25])] , [new ApexUpgrade("Fusion Powered Missiles", ["+1000 DPH to Supernova Torpedo every 2 rounds"], [25])] ], [[],[]], [[],[],[]], [[],[]] ]),
     new ApexSuperCap(9),
     new ApexSuperCap(10),
     new ApexSuperCap(11),
@@ -1197,10 +1101,7 @@ var apex_warspite = [0,
     new ApexSuperCap(19),
     new ApexSuperCap(20)
 ];
-
-
 // corvettes
-
 var apex_cvii003 = [0,
     new ApexGeneral(1, 70, 0, 0, new Contributor("linaTetris","linatetris",21048500341)),
     new ApexGeneral(2),
@@ -1396,8 +1297,7 @@ var apex_cell = [0,
     new ApexGeneral(8),
     new ApexGeneral(9),
     new ApexGeneral(10),
-    new ApexGeneral(11),
-    // MISSING CRIT DAMAGE DETAILS: new ApexGeneral(11, 1105, 0, 0, "Zero Phoenix", [[new ApexUpgrade("Aircraft Armor Enhancement", ["+1% HP", "+2% HP", "+3% HP"], [2,2,2]), new ApexUpgrade("Warhead Modification", ["+3 DPH on CT-4-4500 \"Beehive\""], [2])]]),
+    new ApexGeneral(11), // MISSING CRIT DAMAGE DETAILS: new ApexGeneral(11, 1105, 0, 0, "Zero Phoenix", [[new ApexUpgrade("Aircraft Armor Enhancement", ["+1% HP", "+2% HP", "+3% HP"], [2,2,2]), new ApexUpgrade("Warhead Modification", ["+3 DPH on CT-4-4500 \"Beehive\""], [2])]]),
     new ApexGeneral(12),
     new ApexGeneral(13),
     new ApexGeneral(14),

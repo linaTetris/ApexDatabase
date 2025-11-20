@@ -701,6 +701,7 @@ th.apex-table-row {
 
 #generated-code-container-outer {
     position: relative;
+    min-height: 64px;
 }
 
 #generated-code-container {
@@ -717,4 +718,32 @@ th.apex-table-row {
     color: #fff;
     overflow: hidden;
     min-width: calc(100% - 30px);
+}
+
+.disabledform {
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+#submit-pr {
+    width: 95%;
+    left: 2.5%;
+    position: relative;
+    background-color: #209920;
+    color: #fff;
+    font-size: 24px;
+    margin: 10px 0px;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    opacity: 1;
+}
+
+#submit-pr:disabled {
+    opacity: 0.4;
+}
+
+#submit-pr:hover:not(:disabled) {
+    background-color: #10bb10;
 }

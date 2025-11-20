@@ -432,8 +432,6 @@ function generateApexCode() {
 
             for (let i=0; i<ship.slotCount[mod]; i++) {variantUpgrades[i] += "]";}
 
-            // console.log(variantUpgrades);
-
             allSlots[mod] += "[";
 
             for (let i=0; i<ship.slotCount[mod]; i++) {
@@ -441,8 +439,6 @@ function generateApexCode() {
             }
             allSlots[mod] += "]";
         }
-
-        // console.log("ALL SLOTS", allSlots)
         
         allEmpty = true;
         for (let i=0; i<ship.moduleCount; i++) {
@@ -506,15 +502,53 @@ function generateApexCode() {
     }
 
     code += ")"
-    console.log(code);
 
-    // document.getElementById("generated-code").innerHTML = code;
+    document.getElementById("generated-code").innerHTML = code;
 
     // temporary line before git integration is here
-    document.getElementById("generated-code").innerHTML = `${ship.apexReferenceVariable}[${apex_level}] = ${code}`;
+    // document.getElementById("generated-code").innerHTML = `${ship.apexReferenceVariable}[${apex_level}] = ${code}`;
 
     document.getElementById("generated-code").style.display = "inline-block";
 
     // JOKE LINE, don't actually uncomment this 
     // eval(code);
+    globalCode = code;
+}
+
+var globalCode;
+
+async function sendPR() {
+    const payload = {
+        shipIdx: selectedShipIdx,
+        shipDisplayName: ships[selectedShipIdx].id,
+        index: Number(document.getElementById("apex-level-selector").value),
+        newValue: globalCode
+    };
+
+    try {
+        const response = await fetch("https://apex-database-pr.ak47-tetris.workers.dev/create-pr", {
+            method: "POST",
+            headers: {
+            "Content-Type": "application/json"
+            },
+            body: JSON.stringify(payload)
+    });
+
+    const data = await response.json();
+
+    if (response.ok && data.html_url) {
+        console.log(`PR Created: <a href="${data.html_url}" target="_blank">${data.html_url}</a>`);
+    } else {
+        console.error(`Error: ${JSON.stringify(data, null, 2)}`);
+    }
+
+    } catch (err) {
+        console.error(err);
+        console.log(`Network error: ${err.message}`);
+    }
+}
+
+function verifyCorrect() {
+    document.getElementById("submit-PR").disabled = !document.getElementById("submit-PR").disabled;
+    document.getElementById("form-input-container").classList.toggle("disabledform");
 }
