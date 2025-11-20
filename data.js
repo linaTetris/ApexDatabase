@@ -103,6 +103,12 @@ var ships = [
         new ShipVariant(1, "Aircraft Type", "Aircraft Destroyer"),
     ], apex_tundra, "apex_tundra"),
 
+    new Ship("Aldabra", "destroyer", "noma", [
+        new ShipVariant(0, "Generic Type", "Heavy Cannon Destroyer"),
+        new ShipVariant(1, "Armored Type", "Heavy Assault Destroyer"),
+        new ShipVariant(2, "Armored Type", "Heavy Anti-Aircraft Destroyer"),
+    ], apex_aldabra, "apex_aldabra"),
+
     new Ship("Guardian", "destroyer", "antonios", [
         new ShipVariant(0, "Support Type", "Support Destroyer"),
         new ShipVariant(1, "Dual-Purpose Type", "Dual-Purpose Assault Ship"),
