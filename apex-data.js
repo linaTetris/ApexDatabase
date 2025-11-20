@@ -1148,7 +1148,7 @@ var apex_cvm011 = [0,
     new ApexGeneral(20)
 ];
 
-var apex_t800 = [0,
+new ApexGeneral(0, 2160, 0, 0, new Contributor("test"); selectedShipIdx = 0; document.getElementById("apex-level-selector").value = 0;  //", "elite ball knowledge"), [[new ApexUpgrade("Extreme Energy Overload", ["During the first 30 seconds of battle, Cooldown is reduced by 90%","During the first 30 seconds of battle, Cooldown is reduced by 95%","During the first 45 seconds of battle, Cooldown is reduced by 95%"], [15,15,15]), ]])
     new ApexGeneral(1, 105, 0, 0, new Contributor("linaTetris","linatetris",21048500341)),
     new ApexGeneral(2),
     new ApexGeneral(3),
