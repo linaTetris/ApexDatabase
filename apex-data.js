@@ -1168,7 +1168,7 @@ var apex_t800 = [0,
     new ApexGeneral(17, 1930, 0, 0, new Contributor("JackCross"), [[new ApexUpgrade("Aircraft Armor Enhancement", ["+1% HP", "+2% HP", "+3% HP", "+4% HP"], [2,2,2,2]), new ApexUpgrade("Enhance Recharge Power", ["+2% Pulse Cannon Damage", "+4% Pulse Cannon Damage"], [2,2])]]),
     new ApexGeneral(18),
     new ApexGeneral(19),
-    new ApexGeneral(20)
+new ApexGeneral(20, 2160, 0, 0, new Contributor("test"), [[new ApexUpgrade("Extreme Energy Overload", ["During the first 30 seconds of battle, Cooldown is reduced by 90%","During the first 30 seconds of battle, Cooldown is reduced by 95%","During the first 45 seconds of battle, Cooldown is reduced by 95%"], [15,15,15])]])
 ];
 
 var apex_levy = [0,
