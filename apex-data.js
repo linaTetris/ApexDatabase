@@ -1626,7 +1626,7 @@ var apex_vb = [0,
     new ApexGeneral(15),
     new ApexGeneral(16),
     new ApexGeneral(17),
-    new ApexGeneral(18),
+new ApexGeneral(19, 1234, 0, 0, new Contributor("test"), [[new ApexUpgrade("test2", ["BIG BOMB"], [14]), ]])
     new ApexGeneral(19),
     new ApexGeneral(20)
 ];
