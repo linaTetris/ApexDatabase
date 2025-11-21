@@ -109,7 +109,7 @@
                             </tbody>
                         </table>
 
-                        <button id="generate-apex-code" onclick="generateApexCode()">Submit Form</button>
+                        <button id="generate-apex-code" onclick="generateApexCode()">Preview Code</button>
                     </div>
 
                     <h2>Generated code</h2>
@@ -122,7 +122,13 @@
                         <input id="verify-correct" type="checkbox" onchange="verifyCorrect()">
                         <label style="font-size:18px">Check the box to verify you have double checked everything. Then submit once everything has been verified. You will not be able to modify the form once the box is checked.</label>
                         <br>
+                        <br>
+                        <label style="font-size:18px">Upload photos of the blueprint in question with statistics and upgrade previews for every apex-boosted node for each variant. This is optional but strongly recommended to expedite the verification process.</it></label><br>
+                        <input type="file" id="backing-photos" name="backing-photos" accept="image/png, image/jpeg, image/webp" multiple>
                         <button id="submit-PR" onclick="console.log('submitting pr'); sendPR()" disabled>Submit Pull Request!</button>
+                    </div>
+                    <div>
+                        <p id="pr-result-message" style="font-size:18px;"></p>
                     </div>
                 </div>
 
@@ -139,7 +145,7 @@
                                 <p style="font-size: 20px; font-weight: 700; margin:0px;">Apex Database</p>
                             </div>
                         </td>
-                        <td style="width:10%; text-align: right; padding-bottom: 25px">v1.1.1</td>
+                        <td style="width:10%; text-align: right; padding-bottom: 25px">v1.1.3</td>
                     </tr>
                 </tbody>
             </table>

@@ -402,6 +402,7 @@ function generateApexCode() {
 
         for (let mod=0; mod<ship.moduleCount; mod++) {
             var table = document.getElementById(`form-upgrade-list-${mod}`);
+            if (!table) {alert("You haven't selected a ship!"); return;}
             var rows = table.rows;
 
             var variantUpgrades = [];
@@ -456,6 +457,7 @@ function generateApexCode() {
     }
     else {
         var table = document.getElementById("form-upgrade-list-0");
+        if (!table) {alert("You haven't selected a ship!"); return;}
         var rows = table.rows;
 
         var variantUpgrades = [];
@@ -503,6 +505,8 @@ function generateApexCode() {
 
     code += ")"
 
+    code = code.replace(/, ]/g, ']'); // get rid of bad code formatting conventions with leaving , ] at the end.
+
     document.getElementById("generated-code").innerHTML = code;
 
     // temporary line before git integration is here
@@ -513,16 +517,90 @@ function generateApexCode() {
     // JOKE LINE, don't actually uncomment this 
     // eval(code);
     globalCode = code;
+
+    return true;
 }
 
 var globalCode;
 
+async function getImageDataURLs() {
+    const images = document.getElementById("backing-photos").files;
+    let dataURLs = [];
+
+    const readFile = (file) => {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onload = () => resolve(reader.result);
+            reader.onerror = () => reject(reader.error);
+            reader.readAsDataURL(file);
+        });
+    };
+
+    for (const file of images) {
+        const result = await readFile(file);
+        dataURLs.push(result);
+    }
+
+    return dataURLs;
+}
+
+
+async function uploadImage(file) {
+    const form = new FormData();
+    form.append("file", file);
+
+    const res = await fetch("https://apex-database-pr.ak47-tetris.workers.dev/upload-image", {
+        method: "POST",
+        body: form
+    });
+
+    return res.json(); // contains { url: ... }
+}
+
+async function uploadFiles() {
+    const files = document.getElementById("backing-photos").files;
+
+    const form = new FormData();
+    for (const file of files) {
+        form.append("files", file, file.name);
+    }
+
+    const res = await fetch("https://apex-database-pr.ak47-tetris.workers.dev/upload-image", {
+        method: "POST",
+        body: form
+    });
+
+    const responses = await res.json();
+    
+    const urls = [];
+    for (const file of responses) {
+        urls.push(file.content.download_url);
+    }
+    // console.log(urls);
+    return urls;
+}
+
 async function sendPR() {
+    // get images
+    var images = document.getElementById("backing-photos").files;
+    // getImages().then(dataURLs => {images;});
+    const uploadedURLs = await uploadFiles();
+    // const uploadedURLs = [];
+    // for (const f of images) {
+    //     const { url } = await uploadImage(f);
+    //     uploadedURLs.push(url);
+    //     console.log(url);
+    // }
+
+    // console.log(uploadedURLs);
+
     const payload = {
         shipIdx: selectedShipIdx,
-        shipDisplayName: ships[selectedShipIdx].id,
+        shipDisplayName: ships[selectedShipIdx].displayName,
+        username: document.getElementById("name-input").value,
         index: Number(document.getElementById("apex-level-selector").value),
-        newValue: globalCode
+        newValue: globalCode,
+        imageURLs: uploadedURLs
     };
 
     try {
@@ -535,9 +613,13 @@ async function sendPR() {
     });
 
     const data = await response.json();
+    console.log(data);
 
-    if (response.ok && data.html_url) {
-        console.log(`PR Created: <a href="${data.html_url}" target="_blank">${data.html_url}</a>`);
+    if (response.ok && data.prUrl) {
+        console.log(`PR Created: <a href="${data.prUrl}" target="_blank">${data.prUrl}</a>`);
+        document.getElementById("pr-result-message").innerHTML = `
+            Success! You can view your pull request at: <a href="${data.prUrl}" target="_blank">${data.prUrl}</a>
+            `
     } else {
         console.error(`Error: ${JSON.stringify(data, null, 2)}`);
     }
@@ -549,6 +631,10 @@ async function sendPR() {
 }
 
 function verifyCorrect() {
+    if (!generateApexCode()) {document.getElementById("verify-correct").checked = false; return;}
+
+    document.getElementById("pr-result-message").innerHTML = "";
+
     document.getElementById("submit-PR").disabled = !document.getElementById("submit-PR").disabled;
     document.getElementById("form-input-container").classList.toggle("disabledform");
 }

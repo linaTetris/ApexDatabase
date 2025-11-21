@@ -701,7 +701,7 @@ th.apex-table-row {
 
 #generated-code-container-outer {
     position: relative;
-    min-height: 64px;
+    min-height: 80px;
 }
 
 #generated-code-container {
@@ -746,4 +746,23 @@ th.apex-table-row {
 
 #submit-pr:hover:not(:disabled) {
     background-color: #10bb10;
+}
+
+/* #verify-correct:before {
+    width: 20px;
+    height: 20px;
+    background-color: #f00;
+    position: relative;
+    display: block;
+    content: "";
+}
+
+#verify-correct:after {
+    top: -20px;
+    width: 16px;
+    height: 16px;
+} */
+
+a {
+    color: #88ccff;
 }
