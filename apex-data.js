@@ -1,5 +1,5 @@
 var apex_fg300 = [0,
-    new ApexGeneral(1, 145, 0, 0, new Contributor("linaTetris","linatetris",21048500341)),
+new ApexGeneral(1, 30, 0, 0, new Contributor("test"))
     new ApexGeneral(2),
     new ApexGeneral(3),
     new ApexGeneral(4),
