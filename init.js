@@ -97,7 +97,7 @@ function init() {
 
     // load all the ships
 
-    for (i in ships) {
+    for (let i in ships) {
         document.getElementById(ships[i].type).innerHTML += `
         <div id="${ships[i].id}" class="ship" onclick="showApexInfo('${ships[i].id}'); collapseAllApexCollapsible();">${ships[i].displayName}</div>
         `;
@@ -105,7 +105,7 @@ function init() {
         document.getElementById("ship-search-list").innerHTML += `<p class="ship-search-item" onclick="pickShipForm(${i})" value="${ships[i].id}">${ships[i].displayName}</p>`
     }
 
-    for (i=1; i<21; i++) {
+    for (let i=1; i<21; i++) {
         document.getElementById("apex-content").innerHTML += `
         <div id="apex-${i}" class="apex-level-container">
             <button class="collapsible apex-cl">Apex ${i}</button>
@@ -143,7 +143,7 @@ function showApexInfo(id) {
     document.getElementById("ship_display_name").innerHTML = ship.displayName;
     document.getElementById("ship_pfp").src = `assets/ships/${id.replace(/-/g, '_')}_a.png`;
 
-    for (i=1; i<21; i++) {
+    for (let i=1; i<21; i++) {
         if (ship.apex[i].known) {
             if (i == 1) {gain = "";}
             else if (ship.apex[i-1].known) {gain = ` <span style="color:#ffa020">(+${ship.apex[i].hp - ship.apex[i-1].hp})</span>`;}
@@ -261,7 +261,7 @@ function showApexInfo(id) {
         }
         else {
             // document.getElementById(`apex-${i}-content`).innerHTML = "<p style='font-size:24px; text-align:center';>No information available!<br>Have data for this Apex level? Contact <strong>linaTetris</strong> in-game or on Discord!</p>";
-            document.getElementById(`apex-${i}-content`).innerHTML = `<p style='font-size:24px; text-align:center';>No information available!<br>Have data for this Apex level? <span class="showApexForm" onclick="showContributionForm()">Fill out this form to contribute!</span></p>`;
+            document.getElementById(`apex-${i}-content`).innerHTML = `<p style='font-size:24px; text-align:center';>No information available!<br>Have data for this Apex level? <span class="showApexForm" onclick="showContributionForm(); autofillShipInfo(${getIndexOfShip(id)},${i})">Fill out this form to contribute!</span></p>`;
         }
     }
     reloadApexCollapsibles();
@@ -279,13 +279,13 @@ function openTab(event, tab) {
   
     // Get all elements with class="tabcontent" and hide them
     tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
+    for (let i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none";
     }
   
     // Get all elements with class="tablinks" and remove the class "active"
     tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
+    for (let i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
   

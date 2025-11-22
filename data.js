@@ -478,7 +478,14 @@ var ships = [
 ];
 
 function getShipById(id) {
-    for (i in ships) {
+    for (let i in ships) {
         if (ships[i].id == id) {return ships[i];}
     }
+}
+
+function getIndexOfShip(id) {
+    for (let i in ships) {
+        if (ships[i].id == id) {return i;}
+    }
+    return 0;
 }

@@ -3,6 +3,11 @@ function showContributionForm() {
     document.getElementById("contribution-form-wrapper").classList.add("open");
 }
 
+function autofillShipInfo(id, level) {
+    pickShipForm(id);
+    document.getElementById("apex-level-selector").value = level;
+}
+
 function hideContributionForm() {
     document.getElementById("contribution-form-wrapper").style.display = "none";
     document.getElementById("contribution-form-wrapper").classList.remove("open");
