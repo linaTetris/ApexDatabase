@@ -508,7 +508,7 @@ function generateApexCode() {
         }
     }
 
-    code += ")"
+    code += "),"
 
     code = code.replace(/, ]/g, ']'); // get rid of bad code formatting conventions with leaving , ] at the end.
 
