@@ -108,6 +108,18 @@ function init() {
     for (let i=1; i<21; i++) {
         document.getElementById("apex-content").innerHTML += `
         <div id="apex-${i}" class="apex-level-container">
+            <div class="apex-unknown tooltip-wrapper" id="apex-${i}-unknown" style="display:none">
+                <img height="40" src="assets/warning.svg">
+                <div class="tooltip-content">
+                    Info for this Apex level is not known yet.
+                </div>
+            </div>
+            <div class="apex-maybe tooltip-wrapper" id="apex-${i}-maybe" style="display:none">
+                <img height="40" src="assets/info.svg">
+                <div class="tooltip-content">
+                    Bonus HP for this Apex level may not be exact.
+                </div>
+            </div>
             <button class="collapsible apex-cl">Apex ${i}</button>
             <div class="collapsible-content apex-cl" id="apex-${i}-content">
                 
@@ -254,14 +266,23 @@ function showApexInfo(id) {
                 }
             }
 
-
+            if (ship.apex[i].maybe) {
+                document.getElementById(`apex-${i}-maybe`).style.display = "block";
+            }
+            else {
+                document.getElementById(`apex-${i}-maybe`).style.display = "none";
+            }
+            document.getElementById(`apex-${i}-unknown`).style.display = "none";
 
             // document.getElementById(`apex-${i}-content`).innerHTML += `<div class="contributor">Data for this Apex level was provided by <strong>${ship.apex[i].contributor}</strong>!<br>Want to contribute? Contact <strong>linaTetris</strong> in-game or on Discord!</div>`
             document.getElementById(`apex-${i}-content`).innerHTML += `<div class="contributor"><span style="font-size:20px;">Data for this Apex level was provided by <strong>${ship.apex[i].contributor.name}</strong>!</span><br>Want to contribute? <span class="showApexForm" onclick="showContributionForm()">Click here to learn more!</span></div>`
         }
-        else {
+        else { // apex not known yet
             // document.getElementById(`apex-${i}-content`).innerHTML = "<p style='font-size:24px; text-align:center';>No information available!<br>Have data for this Apex level? Contact <strong>linaTetris</strong> in-game or on Discord!</p>";
             document.getElementById(`apex-${i}-content`).innerHTML = `<p style='font-size:24px; text-align:center';>No information available!<br>Have data for this Apex level? <span class="showApexForm" onclick="showContributionForm(); autofillShipInfo(${getIndexOfShip(id)},${i})">Fill out this form to contribute!</span></p>`;
+
+            document.getElementById(`apex-${i}-unknown`).style.display = "block";
+            document.getElementById(`apex-${i}-maybe`).style.display = "none";
         }
     }
     reloadApexCollapsibles();

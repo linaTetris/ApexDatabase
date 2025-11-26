@@ -48,7 +48,7 @@ class ShipVariant {
 }
 
 class ApexGeneral { // general apex stuff, like extra hp.
-    constructor(level, hp=null, cruise=null, warp=null, contributor=null, variantProperties=[]) { // variantProperties should be an array with length equal to the number of variants (ie for FG300, 3.) each sub-array is ApexUpgrade[]
+    constructor(level, hp=null, cruise=null, warp=null, contributor=null, variantProperties=[], maybe=false) { // variantProperties should be an array with length equal to the number of variants (ie for FG300, 3.) each sub-array is ApexUpgrade[]
         this.level = level;
         if (!!hp || hp == 0) {this.hp = hp;}
         if (!!cruise || cruise == 0) {this.cruise = cruise;}
@@ -59,6 +59,9 @@ class ApexGeneral { // general apex stuff, like extra hp.
 
         if ((!!hp || hp == 0) && (!!cruise || cruise == 0) && (!!warp || warp == 0) && !!variantProperties) {this.known = true;}
         else {this.known = false;}
+
+        if (maybe) {this.maybe = true;} // this is for ones that have been extrapolated
+        else {this.maybe = false;}
     }
 }
 
