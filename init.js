@@ -226,8 +226,9 @@ function showApexInfo(id) {
                                 document.getElementById(`${ship.id}-${i}-${j}-${foundupgrade}`).innerHTML = `<p style="margin: 0; padding: 10px 0px; text-align:center; font-weight: 700;">${(j == 0) ? "M" : String.fromCharCode(64 + j)}${k+1} - ${ship.modules[j][k].name}</p>`;
 
                                 // add the upgrade
+                                upgrade_text = "";
                                 for (u in ship.apex[i].variantProperties[j][k]) { // for upgrade in ship.apex... -> u = ApexUpgrade
-                                    upgrade_text = `<div class="apex-upgrade-wrapper"><button class="collapsible apex-upgrade">${ship.apex[i].variantProperties[j][k][u].name} +${ship.apex[i].variantProperties[j][k][u].levels}</button>
+                                    upgrade_text += `<div class="apex-upgrade-wrapper"><button class="collapsible apex-upgrade">${ship.apex[i].variantProperties[j][k][u].name} +${ship.apex[i].variantProperties[j][k][u].levels}</button>
                                     <div class="collapsible-content apex-upgrade"><table style="padding:5px;width:100%"><thead><tr><th style="text-align: left;">Effect</th><th style="width: 40px; text-align:right">TP</th></tr></thead><tbody>`;
                                     for (d in ship.apex[i].variantProperties[j][k][u].description) {
                                         upgrade_text += `<tr><td>${ship.apex[i].variantProperties[j][k][u].description[d].effect}</td><td style="width: 40px; text-align:right">${ship.apex[i].variantProperties[j][k][u].description[d].tp} TP</td></tr>`;

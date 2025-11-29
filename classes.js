@@ -66,8 +66,8 @@ class ApexGeneral { // general apex stuff, like extra hp.
 }
 
 class ApexSuperCap extends ApexGeneral { // supercap apex
-    constructor(level, hp=null, cruise=null, warp=null, contributor=null, variantProperties=[]) {
-        super(level, hp, cruise, warp, contributor, variantProperties);
+    constructor(level, hp=null, cruise=null, warp=null, contributor=null, variantProperties=[], maybe=false) {
+        super(level, hp, cruise, warp, contributor, variantProperties, maybe);
 
         /*  variantProperties should be an array with length equal to the number of MODULE TYPES
             subarrays will correspond to apex for M1, M2, etc.
