@@ -601,7 +601,7 @@ async function sendPR() {
 
     const payload = {
         shipIdx: selectedShipIdx,
-        shipDisplayName: ships[selectedShipIdx].displayName,
+        shipDisplayName: ships[selectedShipIdx].id,
         username: document.getElementById("name-input").value,
         index: Number(document.getElementById("apex-level-selector").value),
         newValue: globalCode,
