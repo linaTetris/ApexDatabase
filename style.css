@@ -91,6 +91,10 @@ input::placeholder {color: #aaaaaa;}
     align-content: center;
     border-radius: 10px;
 
+    font-size: 16px;
+
+    overflow: visible;
+    position: relative;    
     transition: 0.25s;
 }
 
@@ -113,7 +117,7 @@ input::placeholder {color: #aaaaaa;}
     float: left;
     position: fixed;
     margin: 0px;
-    width: 300px;
+    width: 325px;
     height: calc(100% - 50px);
     overflow-y: auto;
     background-color: #000020a0;
@@ -125,10 +129,10 @@ input::placeholder {color: #aaaaaa;}
 
 #apex-content-wrapper {
     float: left;
-    left: 300px;
+    left: 325px;
     position: fixed;
     margin: 0px;
-    width: calc(100% - 300px);
+    width: calc(100% - 325px);
     height: calc(100% - 50px);
     overflow-y: scroll;
     /* background-color: #00000080; */
@@ -207,11 +211,16 @@ input::placeholder {color: #aaaaaa;}
     align-content: center;
 }
 
+.collapsible-active + .collapsible-content.shiptab:has(.ship:hover) {
+    overflow: visible;
+}
+
 .shiptab-wrapper {
     width: 85%;
     display: flexbox;
     margin: auto;
     background-color: #707;
+    overflow: visible;
     border-radius: 24px;
     transition: 0.2s ease-out;
 }
@@ -779,18 +788,51 @@ a {
     position: relative;
 } */
 .tooltip-wrapper .tooltip-content {
-    display: none;
+    display: block;
     position: absolute;
-    background-color: #0000;
+    background-color: #a600;
     padding: 5px 20px;
     width: 200px;
-    transform: translateX(-190px);
+    border-radius: 200px;
+    border: none;
+    transform: translate(-250px, -45px);
     opacity: 0;
+    z-index: 9999999;
+    pointer-events: none;
 
     transition: 0.5s ease-out;
 }
 .tooltip-wrapper:hover .tooltip-content {
     display: block;
     opacity: 1;
-    background-color: #000b;
+    background-color: #a60e;
+}
+
+.data-confirmed, .data-complete {
+    position: absolute;
+    z-index: 9999;
+    transform: translate(-30px,-22px);
+    left: 100%;
+}
+
+.ship:hover .data-confirmed + .shiptab-hover, .ship:hover .data-complete + .shiptab-hover {
+    display: block;
+    opacity: 1;
+    background-color: #0a0d;
+}
+
+.shiptab-hover {
+    display: block;
+    position: absolute;
+    background-color: #0a00;
+    padding: 5px 20px;
+    width: 180px;
+    transform: translate(0px, 12px);
+    border-radius: 20px;
+    border: none;
+    opacity: 0;
+    z-index: 9999999;
+    pointer-events: none;
+
+    transition: 0.5s ease-out;
 }

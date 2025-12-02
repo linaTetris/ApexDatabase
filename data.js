@@ -136,6 +136,10 @@ var ships = [
         new ShipVariant(1, "Aircraft Type", "Aircraft Destroyer"),
     ], apex_vanguard, "apex_vanguard"),
 
+    new Ship("XT-11", "destroyer", "chu", [
+        new ShipVariant(0, "Missile Type", "Missile Destroyer")
+    ], apex_xt11, "apex_xt11"),
+
     // cruisers
 
     new Ship("KCCPV2.0", "cruiser", "dawn", [
@@ -458,7 +462,7 @@ var ships = [
         new ShipVariant(0, "Anti-Aircraft Type", "Combat Attacker")
     ], apex_mistral, "apex_mistral"),
 
-    new Ship("Balancer Anderson SC020", "fighter", "antonios", [
+    new Ship("Balancer SC020", "fighter", "antonios", [ // Balancer Anderson SC020, name is too long currently
         new ShipVariant(0, "Interference Type", "Scout")
     ], apex_balancer, "apex_balancer"),
 
