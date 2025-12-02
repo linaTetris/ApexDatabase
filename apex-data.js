@@ -1045,7 +1045,7 @@ var apex_crux = [0,
     new ApexSuperCap(9), // 56295 hp
     new ApexSuperCap(10,66515,10,50, new Contributor("linaTetris","linatetris",21048500341), [[[new ApexUpgrade("Sympathetic Detonation", ["+6% chance for +12% Crit damage"], [2])],[new ApexUpgrade("Sympathetic Detonation", ["+6% chance for +12% Crit damage"], [2])]], [[new ApexUpgrade("Airborne Weapon Maintenance", ["+1% Damage for loaded aircraft"], [2])],[new ApexUpgrade("Airborne Weapon Maintenance", ["+1% Damage for loaded aircraft"], [2])]], [[],[]], [[new ApexUpgrade("Airborne Weapon Maintenance", ["+1% Damage for loaded aircraft"], [2])],[new ApexUpgrade("Sympathetic Detonation", ["+6% chance for +12% Crit damage"], [2])],[]]]),
     new ApexSuperCap(11,72465,10,50, new Contributor("linaTetris","linatetris",21048500341), [[[new ApexUpgrade("Sympathetic Detonation", ["+6% chance for +12% Crit damage"], [2])],[new ApexUpgrade("Sympathetic Detonation", ["+6% chance for +12% Crit damage"], [2])]], [[new ApexUpgrade("Airborne Weapon Maintenance", ["+1% Damage for loaded aircraft"], [2])],[new ApexUpgrade("Airborne Weapon Maintenance", ["+1% Damage for loaded aircraft"], [2])]], [[],[]], [[new ApexUpgrade("Airborne Weapon Maintenance", ["+1% Damage for loaded aircraft"], [2])],[new ApexUpgrade("Sympathetic Detonation", ["+6% chance for +12% Crit damage"], [2])],[]]]),
-    new ApexSuperCap(12), // C+2
+new ApexSuperCap(12, 0, 0, 0, new Contributor("test"), [[[],[]],[[],[]],[[],[]],[[new ApexUpgrade("test", [""], [1])],[],[]]]),
     new ApexSuperCap(13),
     new ApexSuperCap(14), // A+2 or M+2??
     new ApexSuperCap(15), 
