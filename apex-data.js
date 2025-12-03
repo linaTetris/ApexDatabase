@@ -392,7 +392,7 @@ var apex_taurus = [0,
 var apex_tundra = [0,
     new ApexGeneral(1,565,0,0, new Contributor("linaTetris","linatetris",21048500341)),
     new ApexGeneral(2,1130,0,0, new Contributor("linaTetris","linatetris",21048500341), true),
-    new ApexGeneral(3, 1690, 0, 0, new Contributor("linaTetris", "linatetris", 21048500341), [[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP"], [2])],[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP"], [2])]], true),
+    new ApexGeneral(3, 1695, 0, 0, new Contributor("linaTetris", "linatetris", 21048500341), [[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP"], [2])],[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP"], [2])]]),
     new ApexGeneral(4, 2245, 0, 0, new Contributor("linaTetris", "linatetris", 21048500341), [[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP"], [2])],[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP"], [2])]], true),
     new ApexGeneral(5, 3135, 0, 50, new Contributor("linaTetris", "linatetris", 21048500341), [[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP","+2% HP"], [2,2])],[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP","+2% HP"], [2,2])]]), // correct extrapolation
     new ApexGeneral(6, 3700, 0, 50, new Contributor("linaTetris", "linatetris", 21048500341), [[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP","+2% HP"], [2,2])],[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP","+2% HP"], [2,2])]]), // correct extrapolation
@@ -740,7 +740,7 @@ var apex_jaeger = [0, // hp parallels predator
     new ApexGeneral(3,3130,0,0, new Contributor("linaTetris","linatetris",21048500341), [[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP"], [2])],[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP"], [2])]],true),
     new ApexGeneral(4,4170,0,0, new Contributor("linaTetris","linatetris",21048500341), [[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP"], [2])],[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP"], [2])]]),
     new ApexGeneral(5,5800,0,50, new Contributor("linaTetris","linatetris",21048500341), [[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP","+2% HP"], [2,2])],[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP","+2% HP"], [2,2])]]),
-    new ApexGeneral(6),
+    new ApexGeneral(6,6845,0,50, new Contributor("linaTetris","linatetris",21048500341), [[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP","+2% HP"], [2,2])],[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP","+2% HP"], [2,2])]], true),
     new ApexGeneral(7,7885,0,50, new Contributor("Haki", "haki0608", 20978400341), [[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP","+2% HP"], [2,2])],[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP","+2% HP"], [2,2])]]),
     new ApexGeneral(8),
     new ApexGeneral(9),
@@ -765,7 +765,7 @@ var apex_predator = [0, // hp parallels jaeger
     new ApexGeneral(5,5800,0,50, new Contributor("linaTetris","linatetris",21048500341), [[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP","+2% HP"], [2,2])],[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP","+2% HP"], [2,2])],[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP","+2% HP"], [2,2])]]),
     new ApexGeneral(6,6845,0,50, new Contributor("linaTetris","linatetris",21048500341), [[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP","+2% HP"], [2,2])],[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP","+2% HP"], [2,2])],[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP","+2% HP"], [2,2])]], true),
     new ApexGeneral(7,7885,0,50, new Contributor("Haki", "haki0608", 20978400341), [[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP","+2% HP"], [2,2])],[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP","+2% HP"], [2,2])],[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP","+2% HP"], [2,2])]]),
-    new ApexGeneral(8, 8925, 0, 50, new Contributor("linaTetris", "linatetris", 21048500341), [[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP","+2% HP","+3% HP"], [2,2,2])],[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP","+2% HP","+3% HP"], [2,2,2])],[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP","+2% HP","+3% HP"], [2,2,2])]], true),
+    new ApexGeneral(8, 8925, 0, 50, new Contributor("linaTetris", "linatetris", 21048500341), [[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP","+2% HP","+3% HP"], [2,2,2])],[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP","+2% HP","+3% HP"], [2,2,2])],[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP","+2% HP","+3% HP"], [2,2,2])]]), // correct extrapolation
     new ApexGeneral(9, 9965, 0, 50, new Contributor("linaTetris", "linatetris", 21048500341), [[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP","+2% HP","+3% HP"], [2,2,2])],[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP","+2% HP","+3% HP"], [2,2,2])],[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP","+2% HP","+3% HP"], [2,2,2])]], true),
     new ApexGeneral(10, 11595, 10, 50, new Contributor("JackCross"), [[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP", "+2% HP", "+3% HP"], [2,2,2]), new ApexUpgrade("Airborne Weapon Maintenance", ["+2% damage for loaded aircraft"], [2]), new ApexUpgrade("Sympathetic Detonation", ["+6% chance for +12% Crit damage on Projectile Weapon System"], [2]), new ApexUpgrade("Sympathetic Detonation", ["+6% chance for +12% Crit damage on Defensive Battery System"], [2])],[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP", "+2% HP", "+3% HP"], [2,2,2]), new ApexUpgrade("Airborne Weapon Maintenance", ["+2% damage for loaded aircraft"], [2]), new ApexUpgrade("Sympathetic Detonation", ["+6% chance for +12% Crit damage on Defensive Battery System"], [2])],[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP", "+2% HP", "+3% HP"], [2,2,2]), new ApexUpgrade("Airborne Weapon Maintenance", ["+2% damage for loaded aircraft"], [2]), new ApexUpgrade("Sympathetic Detonation", ["+6% chance for +12% Crit damage on Anti-Aircraft Missile System"], [2]), new ApexUpgrade("Sympathetic Detonation", ["+6% chance for +12% Crit damage on Defensive Battery System"], [2])]]),
     new ApexGeneral(11, 12640, 10, 50, new Contributor("JackCross"), [[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP", "+2% HP", "+3% HP"], [2,2,2]), new ApexUpgrade("Airborne Weapon Maintenance", ["+2% damage for loaded aircraft"], [2]), new ApexUpgrade("Sympathetic Detonation", ["+6% chance for +12% Crit damage on Projectile Weapon System"], [2]), new ApexUpgrade("Sympathetic Detonation", ["+6% chance for +12% Crit damage on Defensive Battery System"], [2])],[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP", "+2% HP", "+3% HP"], [2,2,2]), new ApexUpgrade("Airborne Weapon Maintenance", ["+2% damage for loaded aircraft"], [2]), new ApexUpgrade("Sympathetic Detonation", ["+6% chance for +12% Crit damage on Defensive Battery System"], [2])],[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP", "+2% HP", "+3% HP"], [2,2,2]), new ApexUpgrade("Airborne Weapon Maintenance", ["+2% damage for loaded aircraft"], [2]), new ApexUpgrade("Sympathetic Detonation", ["+6% chance for +12% Crit damage on Anti-Aircraft Missile System"], [2]), new ApexUpgrade("Sympathetic Detonation", ["+6% chance for +12% Crit damage on Defensive Battery System"], [2])]], true),
@@ -782,11 +782,11 @@ var apex_predator = [0, // hp parallels jaeger
 
 var apex_ranger = [0,
     new ApexGeneral(1,1005,0,0, new Contributor("linaTetris","linatetris",21048500341)),
-    new ApexGeneral(2),
-    new ApexGeneral(3),
-    new ApexGeneral(4),
-    new ApexGeneral(5),
-    new ApexGeneral(6, 5070, 0, 50, new Contributor("Zero Phoenix", "_zerophoenix", 21624700034), [[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP", "+2% HP"], [2,2])],[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP", "+2% HP"], [2,2])]]),
+    new ApexGeneral(2,2005,0,0, new Contributor("linaTetris","linatetris",21048500341), true),
+    new ApexGeneral(3, 3005, 0, 50, new Contributor("linaTetris", "linatetris", 21048500341), [[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP"], [2])],[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP"], [2])]], true),
+    new ApexGeneral(4, 4010, 0, 50, new Contributor("linaTetris", "linatetris", 21048500341), [[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP"], [2])],[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP"], [2])]]),
+    new ApexGeneral(5, 5575, 0, 50, new Contributor("linaTetris", "linatetris", 21048500341), [[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP", "+2% HP"], [2,2])],[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP", "+2% HP"], [2,2])]]),
+    new ApexGeneral(6, 6580, 0, 50, new Contributor("Zero Phoenix", "_zerophoenix", 21624700034), [[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP", "+2% HP"], [2,2])],[new ApexUpgrade("Kernel Structure Enhancement", ["+1% HP", "+2% HP"], [2,2])]]),
     new ApexGeneral(7),
     new ApexGeneral(8),
     new ApexGeneral(9),
@@ -856,7 +856,7 @@ var apex_sou = [0, // spear of uranus
     new ApexSuperCap(4,14455,0,0, new Contributor("linaTetris","linatetris",21048500341)),
     new ApexSuperCap(5,21085,0,50, new Contributor("linaTetris","linatetris",21048500341)),
     new ApexSuperCap(6,24940,0,50, new Contributor("linaTetris","linatetris",21048500341)),
-    new ApexSuperCap(7), // 28795
+    new ApexSuperCap(7), // 28795, B+1, B1 crit, B2 +?% aircraft dmg, B3 +2% repair
     new ApexSuperCap(8), // 32650, B+1
     new ApexSuperCap(9),
     new ApexSuperCap(10),
@@ -897,24 +897,24 @@ var apex_sop = [0, // shield of plutus: Currently unsure on B2, C1 numbers. Need
 
 var apex_ctg = [0,
     new ApexSuperCap(1,2270,0,0, new Contributor("linaTetris","linatetris",21048500341)),
-    new ApexSuperCap(2),
+    new ApexSuperCap(2,5295,0,0, new Contributor("linaTetris","linatetris",21048500341), true),
     new ApexSuperCap(3,8315,0,0, new Contributor("SeatbeltTongue","seatbelttongue",20662200155)),
     new ApexSuperCap(4,11340,0,0, new Contributor("linaTetris","linatetris",21048500341)),
     new ApexSuperCap(5,16535,0,50, new Contributor("linaTetris","linatetris",21048500341)),
-    new ApexSuperCap(6),
-    new ApexSuperCap(7),
-    new ApexSuperCap(8),
-    new ApexSuperCap(9),
-    new ApexSuperCap(10),
-    new ApexSuperCap(11),
-    new ApexSuperCap(12),
+    new ApexSuperCap(6, 19560, 0, 50, new Contributor("Old Goats", "oldgoats", 20557300056), [[[],[]],[[],[]],[[],[],[]],[[],[],[]],[[new ApexUpgrade("Warhead Modification", ["+2 DPH on CM-2x45B AA Missile"], [2])],[],[new ApexUpgrade("Nano Effectiveness Enhancement", ["+2% Repair Effectiveness"], [2])]]], true),
+    new ApexSuperCap(7, 22585, 0, 50, new Contributor("Old Goats", "oldgoats", 20557300056), [[[],[]],[[],[]],[[new ApexUpgrade("Sympathetic Detonation", ["+6% chance for +12% Crit Damage"], [2])],[new ApexUpgrade("Sympathetic Detonation", ["+6% chance for +12% Crit Damage"], [2])],[new ApexUpgrade("Sympathetic Detonation", ["+6% chance for +12% Crit Damage"], [2])]],[[],[],[]],[[new ApexUpgrade("Warhead Modification", ["+2 DPH on CM-2x45B AA Missile"], [2])],[],[new ApexUpgrade("Nano Effectiveness Enhancement", ["+2% Repair Effectiveness"], [2])]]]),
+    new ApexSuperCap(8, 25605, 0, 50, new Contributor("Old Goats", "oldgoats", 20557300056), [[[],[]],[[],[]],[[new ApexUpgrade("Sympathetic Detonation", ["+6% chance for +12% Crit Damage"], [2])],[new ApexUpgrade("Sympathetic Detonation", ["+6% chance for +12% Crit Damage"], [2])],[new ApexUpgrade("Sympathetic Detonation", ["+6% chance for +12% Crit Damage"], [2])]],[[],[],[]],[[new ApexUpgrade("Warhead Modification", ["+2 DPH on CM-2x45B AA Missile"], [2])],[],[new ApexUpgrade("Nano Effectiveness Enhancement", ["+2% Repair Effectiveness"], [2])]]]),
+    new ApexSuperCap(9, 28630, 0, 50, new Contributor("Zero Phoenix", "_zerophoenix", 21624700034), [[[],[]],[[new ApexUpgrade("Warhead Modification", ["+25 DPH on CM-8x608A \"Gamma Storm\""], [2])],[new ApexUpgrade("Sympathetic Detonation", ["+6% chance for +12% Crit Damage"], [2])]],[[new ApexUpgrade("Sympathetic Detonation", ["+6% chance for +12% Crit Damage"], [2])],[new ApexUpgrade("Sympathetic Detonation", ["+6% chance for +12% Crit Damage"], [2])],[new ApexUpgrade("Sympathetic Detonation", ["+6% chance for +12% Crit Damage"], [2])]],[[],[],[]],[[new ApexUpgrade("Warhead Modification", ["+2 DPH on CM-2x45B AA Missile"], [2])],[],[new ApexUpgrade("Nano Effectiveness Enhancement", ["+2% Repair Effectiveness"], [2])]]]),
+    new ApexSuperCap(10), // 33830 HP MABD+1
+    new ApexSuperCap(11), // MAB+1, D+2
+    new ApexSuperCap(12), // MA+1, BD+2
     new ApexSuperCap(13),
-    new ApexSuperCap(14),
-    new ApexSuperCap(15),
-    new ApexSuperCap(16),
-    new ApexSuperCap(17),
-    new ApexSuperCap(18),
-    new ApexSuperCap(19),
+    new ApexSuperCap(14), // M+1, ABD+2
+    new ApexSuperCap(15), // MABD+2
+    new ApexSuperCap(16), // MAB+2, D+3
+    new ApexSuperCap(17), // MA+2, BD+3
+    new ApexSuperCap(18), 
+    new ApexSuperCap(19), // M+1, ABD+3
     new ApexSuperCap(20) // 69380 HP, +43 +86 +129 DPH on warhead modification M2, warhead mod on +25, 50, 75 dph A1, D1 is +2,4,6 DPH
 ];
 
@@ -1148,13 +1148,13 @@ var apex_cvii003 = [0,
     new ApexGeneral(20)
 ];
 
-var apex_cvm011 = [0,
+var apex_cvm011 = [0, // parallels T800
     new ApexGeneral(1, 105, 0, 0, new Contributor("linaTetris","linatetris",21048500341)),
     new ApexGeneral(2),
     new ApexGeneral(3),
     new ApexGeneral(4),
-    new ApexGeneral(5),
-    new ApexGeneral(6),
+    new ApexGeneral(5), // 575
+    new ApexGeneral(6), // 675
     new ApexGeneral(7),
     new ApexGeneral(8),
     new ApexGeneral(9),
@@ -1199,7 +1199,7 @@ var apex_levy = [0,
     new ApexGeneral(2, 165, 0, 0, new Contributor("linaTetris","linatetris",21048500341), true),
     new ApexGeneral(3, 245, 0, 0, new Contributor("linaTetris","linatetris",21048500341), [[new ApexUpgrade("Aircraft Armor Enhancement", ["+1% HP"], [2])]], true),
     new ApexGeneral(4, 330, 0, 0, new Contributor("Haki", "haki0608", 20978400341), [[new ApexUpgrade("Aircraft Armor Enhancement", ["+1% HP"], [2])]]),
-    new ApexGeneral(5, 460, 0, 0, new Contributor("linaTetris","linatetris",21048500341), [[new ApexUpgrade("Aircraft Armor Enhancement", ["+1% HP","+2% HP"], [2,2])]], true),
+    new ApexGeneral(5, 460, 0, 0, new Contributor("linaTetris","linatetris",21048500341), [[new ApexUpgrade("Aircraft Armor Enhancement", ["+1% HP","+2% HP"], [2,2])]]), // correct extrapolation
     new ApexGeneral(6, 540, 0, 0, new Contributor("linaTetris","linatetris",21048500341), [[new ApexUpgrade("Aircraft Armor Enhancement", ["+1% HP","+2% HP"], [2,2])]]),
     new ApexGeneral(7, 625, 0, 0, new Contributor("linaTetris","linatetris",21048500341), [[new ApexUpgrade("Aircraft Armor Enhancement", ["+1% HP","+2% HP"], [2,2])]], true),
     new ApexGeneral(8, 705, 0, 0, new Contributor("linaTetris","linatetris",21048500341), [[new ApexUpgrade("Aircraft Armor Enhancement", ["+1% HP","+2% HP","+3% HP"], [2,2,2])]], true),
@@ -1455,7 +1455,7 @@ var apex_br050 = [0,
     new ApexGeneral(5), // 385 HP
     new ApexGeneral(6), // 455 HP?
     new ApexGeneral(7),
-    new ApexGeneral(8),
+    new ApexGeneral(8), // 595 HP zero phoenix
     new ApexGeneral(9),
     new ApexGeneral(10), // 770, +10 DPH for A and B, no idea for C
     new ApexGeneral(11),
@@ -1477,8 +1477,8 @@ var apex_stingray = [0,
     new ApexGeneral(4),
     new ApexGeneral(5),
     new ApexGeneral(6),
-    new ApexGeneral(7),
-    new ApexGeneral(8),
+    new ApexGeneral(7), 
+    new ApexGeneral(8), // 610?, zero phoenix not sure where to put
     new ApexGeneral(9),
     new ApexGeneral(10),
     new ApexGeneral(11),
