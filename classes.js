@@ -48,7 +48,7 @@ class ShipVariant {
 }
 
 class ApexGeneral { // general apex stuff, like extra hp.
-    constructor(level, hp=null, cruise=null, warp=null, contributor=null, variantProperties=[], maybe=false) { // variantProperties should be an array with length equal to the number of variants (ie for FG300, 3.) each sub-array is ApexUpgrade[]
+    constructor(level, hp=null, cruise=null, warp=null, contributor=null, variantProperties=[], maybe=false, guess=false) { // variantProperties should be an array with length equal to the number of variants (ie for FG300, 3.) each sub-array is ApexUpgrade[]
         this.level = level;
         if (!!hp || hp == 0) {this.hp = hp;}
         if (!!cruise || cruise == 0) {this.cruise = cruise;}
@@ -84,7 +84,7 @@ class ApexSuperCap extends ApexGeneral { // supercap apex
 }
 
 class ApexUpgrade { // tp based stuff, ie Crux Apex 7 with C1/C2 upgrades.
-    constructor(name, description, tp) {
+    constructor(name, description, tp, guess=false) {
         /* array of extra stuff like upgrades. 
             name is the name of enhancement (ie Kernel Structure Enhancement)
             levels is the number of levels this will have - example: at apex 3, the KSE upgrade will be 1
@@ -102,6 +102,9 @@ class ApexUpgrade { // tp based stuff, ie Crux Apex 7 with C1/C2 upgrades.
         for (let i=0; i<description.length; i++) {
             this.description.push({effect: description[i], tp: tp[i]});
         }
+        
+        if (guess) {this.guess = true;} // this is for upgrades that have been guessed
+        else {this.guess = false;}
     }
 }
 

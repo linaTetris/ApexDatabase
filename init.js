@@ -142,9 +142,15 @@ function init() {
         document.getElementById("apex-content").innerHTML += `
         <div id="apex-${i}" class="apex-level-container">
             <div class="apex-unknown tooltip-wrapper" id="apex-${i}-unknown" style="display:none">
-                <img height="40" src="assets/warning.svg">
+                <img height="40" src="assets/error.svg">
                 <div class="tooltip-content">
                     Info for this Apex level is not known yet.
+                </div>
+            </div>
+            <div class="apex-theoretical tooltip-wrapper" id="apex-${i}-theoretical" style="display:none">
+                <img height="40" src="assets/warning.svg">
+                <div class="tooltip-content">
+                    Some info on this Apex level may not be exact.
                 </div>
             </div>
             <div class="apex-maybe tooltip-wrapper" id="apex-${i}-maybe" style="display:none">
@@ -185,6 +191,8 @@ function showApexInfo(id) {
 
     var upgrade_text;
 
+    var hasGuesses;
+
     document.getElementById("ship_display_name").innerHTML = ship.displayName;
     document.getElementById("ship_pfp").src = `assets/ships/${id.replace(/-/g, '_')}_a.png`;
 
@@ -219,6 +227,8 @@ function showApexInfo(id) {
             apex_text += "</p>";
 
             document.getElementById(`apex-${i}-content`).innerHTML = apex_text;
+
+            hasGuesses = false;
 
             if (ship.apex[i].variantProperties.length > 0) {
                 upgrade_text = `<table class="apex-upgrades" style="border-spacing:0;"><thead><tr>`;
@@ -261,7 +271,18 @@ function showApexInfo(id) {
                                 // add the upgrade
                                 upgrade_text = "";
                                 for (u in ship.apex[i].variantProperties[j][k]) { // for upgrade in ship.apex... -> u = ApexUpgrade
-                                    upgrade_text += `<div class="apex-upgrade-wrapper"><button class="collapsible apex-upgrade">${ship.apex[i].variantProperties[j][k][u].name} +${ship.apex[i].variantProperties[j][k][u].levels}</button>
+                                    upgrade_text += `<div class="apex-upgrade-wrapper">`
+                                    if (ship.apex[i].variantProperties[j][k][u].guess) { // if it's an extrapolation
+                                        upgrade_text += `
+                                        <div class="apex-upgrade-unknown tooltip-wrapper">
+                                            <img height="30" src="assets/info.svg">
+                                            <div class="tooltip-content">
+                                                Info for this upgrade has not been verified yet.
+                                            </div>
+                                        </div>`;
+                                        hasGuesses = true;
+                                    }
+                                    upgrade_text += `<button class="collapsible apex-upgrade">${ship.apex[i].variantProperties[j][k][u].name} +${ship.apex[i].variantProperties[j][k][u].levels}</button>
                                     <div class="collapsible-content apex-upgrade"><table style="padding:5px;width:100%"><thead><tr><th style="text-align: left;">Effect</th><th style="width: 40px; text-align:right">TP</th></tr></thead><tbody>`;
                                     for (d in ship.apex[i].variantProperties[j][k][u].description) {
                                         upgrade_text += `<tr><td>${ship.apex[i].variantProperties[j][k][u].description[d].effect}</td><td style="width: 40px; text-align:right">${ship.apex[i].variantProperties[j][k][u].description[d].tp} TP</td></tr>`;
@@ -285,7 +306,18 @@ function showApexInfo(id) {
                     for (let j=0; j<ship.apex[i].variantProperties.length; j++) {
                         upgrade_text += `<td class="apex-table-row">`;
                         for (u in ship.apex[i].variantProperties[j]) { // for upgrade in ship.apex... -> u = ApexUpgrade
-                            upgrade_text += `<div class="apex-upgrade-wrapper"><button class="collapsible apex-upgrade">${ship.apex[i].variantProperties[j][u].name} +${ship.apex[i].variantProperties[j][u].levels}</button>
+                            upgrade_text += `<div class="apex-upgrade-wrapper">`
+                            if (ship.apex[i].variantProperties[j][u].guess) { // if it's an extrapolation
+                                upgrade_text += `
+                                <div class="apex-upgrade-unknown tooltip-wrapper">
+                                    <img height="30" src="assets/info.svg">
+                                    <div class="tooltip-content">
+                                        Info for this upgrade has not been verified yet.
+                                    </div>
+                                </div>`;
+                                hasGuesses = true;
+                            }
+                            upgrade_text += `<button class="collapsible apex-upgrade">${ship.apex[i].variantProperties[j][u].name} +${ship.apex[i].variantProperties[j][u].levels}</button>
                             <div class="collapsible-content apex-upgrade"><table style="padding:5px;width:100%"><thead><tr><th style="text-align: left;">Effect</th><th style="width: 40px; text-align:right">TP</th></tr></thead><tbody>`;
                             for (k in ship.apex[i].variantProperties[j][u].description) {
                                 upgrade_text += `<tr><td>${ship.apex[i].variantProperties[j][u].description[k].effect}</td><td style="width: 40px; text-align:right">${ship.apex[i].variantProperties[j][u].description[k].tp} TP</td></tr>`;
@@ -300,11 +332,17 @@ function showApexInfo(id) {
                 }
             }
 
-            if (ship.apex[i].maybe) {
+            if (hasGuesses) {
+                document.getElementById(`apex-${i}-theoretical`).style.display = "block";
+                document.getElementById(`apex-${i}-maybe`).style.display = "none";
+            }
+            else if (ship.apex[i].maybe) {
                 document.getElementById(`apex-${i}-maybe`).style.display = "block";
+                document.getElementById(`apex-${i}-theoretical`).style.display = "none";
             }
             else {
                 document.getElementById(`apex-${i}-maybe`).style.display = "none";
+                document.getElementById(`apex-${i}-theoretical`).style.display = "none";
             }
             document.getElementById(`apex-${i}-unknown`).style.display = "none";
 
@@ -317,6 +355,7 @@ function showApexInfo(id) {
 
             document.getElementById(`apex-${i}-unknown`).style.display = "block";
             document.getElementById(`apex-${i}-maybe`).style.display = "none";
+            document.getElementById(`apex-${i}-theoretical`).style.display = "none";
         }
     }
     reloadApexCollapsibles();

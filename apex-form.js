@@ -149,7 +149,7 @@ function formAddUpgrade(shipID, col, row, table="") {
             <div class="collapsible-content apex-upgrade" style="display:block" ><table style="padding:5px;width:100%"><thead><tr><th style="text-align: left;">Effect</th><th style="width: 50px; text-align:left">TP</th><th style="width: 25px"></th></tr></thead><tbody>
             <tr>
                 <td><input placeholder="Upgrade Description (i.e. +1% HP, +2 DPH on [weapon system])" class="apex-description"></td>
-                <td><input type="number" value="1" step="1" class="apex-description-tp"> TP</td>
+                <td><input type="number" value="2" step="1" class="apex-description-tp"> TP</td>
                 <td style="width: 25px"><p class="apex-upgrade-remove2" onclick="subupgradeListRemove(this)">x</p></td>
             </tr>
             <tr>
@@ -184,7 +184,7 @@ function subupgradeListAdd(element) {
     tbody.innerHTML += `
         <tr>
         <td><input placeholder="Upgrade Description (i.e. +1% HP, +2 DPH on [weapon system])" class="apex-description"></td>
-        <td><input type="number" value="1" step="1" class="apex-description-tp"> TP</td>
+        <td><input type="number" value="2" step="1" class="apex-description-tp"> TP</td>
         <td style="width: 25px"><p class="apex-upgrade-remove2" onclick="subupgradeListRemove(this)">x</p></td>
         </tr>
         <tr>
