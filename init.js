@@ -175,11 +175,15 @@ function init() {
     document.getElementById("fg300").click();
 }
 
+var activeShipID;
+
 function showApexInfo(id) {
     var shiptabs = document.getElementsByClassName("ship");
     for (let i = 0; i < shiptabs.length; i++) {
         shiptabs[i].classList.remove("ship-active");
     }
+
+    activeShipID = id;
 
     document.getElementById(id).classList.add("ship-active");
 
@@ -231,7 +235,7 @@ function showApexInfo(id) {
             hasGuesses = false;
 
             if (ship.apex[i].variantProperties.length > 0) {
-                upgrade_text = `<table class="apex-upgrades" style="border-spacing:0;"><thead><tr>`;
+                upgrade_text = `<div class="apex-upgrade-table-wrapper"><table class="apex-upgrades" style="border-spacing:0;"><thead><tr>`;
 
                 if (ship instanceof SuperCap) {
                     // add the list of modules
@@ -258,7 +262,7 @@ function showApexInfo(id) {
                         upgrade_text += "</tr>";
                     }
 
-                    upgrade_text += "</tr></tbody></table>";
+                    upgrade_text += "</tr></tbody></table></div>";
                     document.getElementById(`apex-${i}-content`).innerHTML += upgrade_text;
 
                     // iterate through each module. the first instance where an upgrade is found will go into the 0th slot.
@@ -327,7 +331,7 @@ function showApexInfo(id) {
                         upgrade_text += "</td>"
                     }
                     
-                    upgrade_text += "</tr></tbody></table>";
+                    upgrade_text += "</tr></tbody></table></div>";
                     document.getElementById(`apex-${i}-content`).innerHTML += upgrade_text;
                 }
             }
@@ -397,16 +401,31 @@ function toggleSidebar() {
             
         document.getElementById("sidebar").style.transform = "";
 
-        document.getElementById("apex-content-wrapper").style.width = "calc(100% - 300px)";
-        document.getElementById("apex-content-wrapper").style.left = "300px";
+        document.getElementById("apex-content-wrapper").style.width = "calc(100% - 325px)";
+        document.getElementById("apex-content-wrapper").style.left = "325px";
     }
     else {
         document.getElementById("sidebar").classList.add("sidebar-hidden");
 
-        document.getElementById("sidebar").style.transform = "translateX(-300px)";
+        document.getElementById("sidebar").style.transform = "translateX(-325px)";
 
         document.getElementById("apex-content-wrapper").style.width = "100%";
         document.getElementById("apex-content-wrapper").style.left = "0px";
 
     }
+}
+
+function resizeApexTable() {
+    var tableWidth = 0.95 * document.getElementById("apex-1-content").offsetWidth;
+    var ship = getShipById(activeShipID);
+    var variants = (ship instanceof SuperCap) ? ship.moduleCount : ship.variantCount;
+    
+    var minWidth = 335;
+
+    // if tables are too crammed split tables
+    if (tableWidth / variants < minWidth) {
+        var tables = document.getElementsByClassName("apex-upgrades");
+    }
+
+    // if table can change to fit more
 }

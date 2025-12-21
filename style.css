@@ -8,13 +8,13 @@ body {
 }
 
 button {
-    font-family: 'Segoe UI';
+    font-family: 'Noto Sans';
     color: #ffffff;
     background-color: #a00080;
 }
 
 input {
-    font-family: 'Segoe UI';
+    font-family: 'Noto Sans';
     color: #ffffff;
 }
 
@@ -841,6 +841,6 @@ a {
 .apex-upgrade-unknown.tooltip-wrapper {
     position: absolute;
     left: 100%;
-    top: 50%;
+    top: 24px;
     transform: translate(-45px, -15px);
 }
