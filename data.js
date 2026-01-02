@@ -66,6 +66,10 @@ var ships = [
         new ShipVariant(1, "Special Type", "Special Frigate"),
     ], apex_zircon, "apex_zircon"),
 
+    new Ship("XT-6", "frigate", "chu", [
+        new ShipVariant(0, "Cannon Type", "Cannon Frigate"),
+    ], apex_xt6, "apex_xt6"),
+
     // destroyers
     new Ship("AC721", "destroyer", "dawn", [
         new ShipVariant(0, "Generic Type", "Heavy Logistics Destroyer"),
@@ -184,6 +188,12 @@ var ships = [
         new ShipVariant(1, "Anti-Aircraft Type", "Area-Denial Anti-Aircraft Cruiser"),
         new ShipVariant(2, "Assault Type", "Offensive Missile Cruiser"),
     ], apex_lightcone, "apex_lightcone"),
+
+    new Ship("Arctos", "cruiser", "noma", [
+        new ShipVariant(0, "Integrated Type", "Multi-Role Cruiser"),
+        new ShipVariant(1, "Anti-Aircraft Type", "Anti-Aircraft Cruiser"),
+        new ShipVariant(2, "Breacher Type", "Heavy Cruiser"),
+    ], apex_arctos, "apex_arctos"),
 
     new Ship("Jaeger", "cruiser", "antonios", [
         new ShipVariant(0, "Support Type", "Heavy Aircraft Cruiser"),
